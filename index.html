@@ -2,32 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <meta property='og:title' content='GirishKumar Patchikoru - Software Engineer' />
-    <meta property='og:image' content='public/img/home2.jpg' />
-    <meta property='og:description' content='software engineer | problem solver | tech enthusiast' />
-    <meta property='og:url' content='https://gpatchikoru.github.io/' />
-
-    <title>GirishKumar Patchikoru - Software Engineer</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Adding a favicon -->
-    <link rel="shortcut icon" href="public/img/logo.png" type="image/x-icon">
-    <link rel="icon" href="public/img/logo.png" type="image/x-icon">
-
-    <!-- Custom styles for this template -->
-    <link href="public/stylesheets/grayscale.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta property='og:title' content='GirishKumar Patchikoru - Software Engineer' />
+  <meta property='og:image' content='public/img/home2.jpg' />
+  <meta property='og:description' content='software engineer | problem solver | tech enthusiast' />
+  <meta property='og:url' content='https://gpatchikoru.github.io/' />
+  <title>GirishKumar Patchikoru - Software Engineer</title>
+  <link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet">
+  <link rel="shortcut icon" href="public/img/logo.png" type="image/x-icon">
+  <link rel="icon" href="public/img/logo.png" type="image/x-icon">
+  <link href="public/stylesheets/grayscale.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -636,79 +626,48 @@ that improved data integrity practices and reduced user errors by 40% across aca
         </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="public/vendor/jquery/jquery.min.js"></script>
-    <script src="public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="public/vendor/jquery/jquery.min.js"></script>
+  <script src="public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="public/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="public/js/grayscale.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const firstActivity = document.querySelector('.activity-item');
+      if (firstActivity) firstActivity.click();
 
-    <!-- Plugin JavaScript -->
-    <script src="public/vendor/jquery-easing/jquery.easing.min.js"></script>
+      const certToggles = document.querySelectorAll('.cert-toggle');
+      const certDetails = document.querySelectorAll('.cert-details');
 
-    <!-- Custom scripts for this template -->
-    <script src="public/js/grayscale.min.js"></script>
-    <script>
-        $("#resume-button").css('visibility', 'visible')
-    </script>
-    <script>
-        $("#resume-button").css('visibility', 'visible');
-        
-        // Certificate toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const certToggles = document.querySelectorAll('.cert-toggle');
-            
-            certToggles.forEach(toggle => {
-                toggle.addEventListener('click', function() {
-                    const details = this.nextElementSibling;
-                    const symbol = this.querySelector('.toggle-symbol');
-                    
-                    // Toggle display and add/remove show-cert class
-                    if (details.classList.contains('show-cert')) {
-                        details.classList.remove('show-cert');
-                        symbol.textContent = '+';
-                    } else {
-                        details.classList.add('show-cert');
-                        symbol.textContent = '-';
-                    }
-                });
-            });
+      certDetails.forEach(d => d.classList.remove('show-cert'));
+      if (certDetails.length > 0) certDetails[0].classList.add('show-cert');
+
+      certToggles.forEach(t => {
+        const sym = t.querySelector('.toggle-symbol');
+        if (sym) sym.style.display = 'none';
+        t.addEventListener('click', () => {
+          certDetails.forEach(d => d.classList.remove('show-cert'));
+          const detail = t.nextElementSibling;
+          detail.classList.add('show-cert');
         });
-
-        // activity certificate display functionality
-        document.addEventListener('DOMContentLoaded', function() {
-  // Get all activity items
-  const activityItems = document.querySelectorAll('.activity-item');
-  
-  // Add click event listener to each activity item
-  activityItems.forEach(item => {
-    item.addEventListener('click', function() {
-      // Remove active class from all items
-      activityItems.forEach(i => i.classList.remove('active'));
-      
-      // Add active class to clicked item
-      this.classList.add('active');
-      
-      // Get the activity identifier
-      const activityId = this.getAttribute('data-activity');
-      
-      // Hide all certificates
-      document.querySelectorAll('.certificate').forEach(cert => {
-        cert.style.display = 'none';
       });
-      
-      // Hide default message
-      document.querySelector('.default-message').style.display = 'none';
-      
-      // Show the corresponding certificate
-      const certificateElement = document.getElementById(`${activityId}-cert`);
-      if (certificateElement) {
-        certificateElement.style.display = 'block';
-      }
-    });
-  });
-});
 
-   
-    </script>
-    
+      const activityItems = document.querySelectorAll('.activity-item');
+      const certificates = document.querySelectorAll('.certificate');
+      const defaultMessage = document.querySelector('.default-message');
+
+      activityItems.forEach(item => {
+        item.addEventListener('click', function () {
+          activityItems.forEach(i => i.classList.remove('active'));
+          this.classList.add('active');
+          const id = this.getAttribute('data-activity');
+          certificates.forEach(c => c.style.display = 'none');
+          defaultMessage.style.display = 'none';
+          const cert = document.getElementById(`${id}-cert`);
+          if (cert) cert.style.display = 'block';
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
