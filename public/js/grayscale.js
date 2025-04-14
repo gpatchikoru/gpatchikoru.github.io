@@ -1,6 +1,7 @@
 (function($) {
-  "use strict"; // Start of use strict
-  // Smooth scrolling using jQuery easing
+  "use strict";
+
+  // Smooth scrolling
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -14,23 +15,18 @@
     }
   });
 
-  // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function() {
     $('.navbar-collapse').collapse('hide');
   });
 
-  // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#mainNav',
     offset: 100
   });
 
-  // Collapse Navbar
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink");
-      
-      // places the resumebutton correctly
       if ($(document).width() >= 992){
         $("#resume-button").height("0px")
         $("#resume-button").css("line-height", "0px")
@@ -39,26 +35,19 @@
       }
     } else {
       $("#mainNav").removeClass("navbar-shrink");
-      // places the resumebutton correctly
       if ($(document).width() >= 992){
         $("#resume-button").height("0px")
         $("#resume-button").css("line-height", "0px")
         $("#resume-button").height($("#navbarResponsive").height() + "px")
         $("#resume-button").css("line-height", $("#navbarResponsive").height() + "px")
       }
-
     }
   };
-  // Collapse now if page is not at top
   navbarCollapse();
-  // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
-
-  // fixing the resume-button when it's resized
   $(document).ready(larg);
   $(window).resize(larg);
-  // $(window).resize(larg);
- 
+
   function larg(){
     if ($(document).width() < 992){
       $("#resume-button").css("border","none")
@@ -68,8 +57,7 @@
       $("#resume-button-li").css("padding-top", "5px")
       $("#resume-button-li").css("padding-bottom", "5px")
       $("#resume-button-li").height("30px")
-
-    }else{
+    } else {
       $("#resume-button").height("0px")
       $("#resume-button").css("line-height", "0px")
       $("#resume-button").height($("#navbarResponsive").height() + "px")
@@ -81,4 +69,36 @@
     }
   }
 
-})(jQuery); // End of use strict
+  // Default: Show first activity and corresponding certificate
+  document.addEventListener('DOMContentLoaded', function () {
+    const firstActivity = document.querySelector('.activity-item');
+    if (firstActivity) firstActivity.click();
+  });
+
+  // Certificates: auto-show first, hide +, and make tab clickable
+  document.addEventListener('DOMContentLoaded', function () {
+    const certToggles = document.querySelectorAll('.cert-toggle');
+    const certDetails = document.querySelectorAll('.cert-details');
+
+    // Hide all certs
+    certDetails.forEach(d => d.classList.remove('show-cert'));
+
+    // Show first by default
+    if (certDetails.length > 0) {
+      certDetails[0].classList.add('show-cert');
+    }
+
+    // Hide + symbol and make tabs exclusive toggle
+    certToggles.forEach(t => {
+      const sym = t.querySelector('.toggle-symbol');
+      if (sym) sym.style.display = 'none';
+
+      t.addEventListener('click', () => {
+        certDetails.forEach(d => d.classList.remove('show-cert'));
+        const detail = t.nextElementSibling;
+        detail.classList.add('show-cert');
+      });
+    });
+  });
+
+})(jQuery);
