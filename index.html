@@ -15,92 +15,146 @@
   <title>GirishKumar Patchikoru - Software Engineer</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template -->
   <link href="public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+<!-- Add this to your <head> section if not already there -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   <!-- Favicon -->
   <link rel="shortcut icon" href="public/img/logo.png" type="image/x-icon">
   <link rel="icon" href="public/img/logo.png" type="image/x-icon">
 
   <!-- Custom styles (grayscale.css) -->
   <link href="public/stylesheets/grayscale.css" rel="stylesheet">
-</head>
+   <!-- Typed.js for typing animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 
 <body id="page-top">
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Home</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#work">Work</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#activities">Activities</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
-          </li>
-          <li class="nav-item" id="resume-button-li">
-            <a id="resume-button" class="js-scroll-trigger" href="https://girishf9.github.io">Resume</a>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="navbar-nav">
+    <div class="nav-item">
+      <a class="nav-link active js-scroll-trigger" href="#page-top">
+        <i class="bi bi-house navicon"></i>
+        <span class="nav-label">Home</span>
+      </a>
     </div>
-  </nav>
+    <div class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#about">
+        <i class="fas fa-user"></i>
+        <span class="nav-label">About</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#work">
+        <i class="fas fa-briefcase"></i>
+        <span class="nav-label">Experience</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#projects">
+        <i class="bi bi-activity navicon"></i>
+        <span class="nav-label">Projects</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#activities">
+        <i class="bi-hdd-stack-fill"></i>
+        <span class="nav-label">Orgs & Leadership</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#contact">
+        <i class="fas fa-envelope"></i>
+        <span class="nav-label">Contact</span>
+      </a>
+    </div>
+  </div>
+</nav>
 
-  <!-- Header -->
-  <header class="masthead">
-    <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto text-center">
-        <br>
-        <img class="circularimage" src="public/img/headshot.png" alt="girishkumarheadshot.jpg" height="200">
-        <br><br><br>
-        <h2 class="mx-auto my-0 text-uppercase">GirishKumar Patchikoru</h2>
-        <h2 class="text-white-50 mx-auto mt-2 mb-5">Software Engineer | Problem Solver | Tech Enthusiast</h2>
-        <a id="moreButton" href="#about" class="btn btn-primary js-scroll-trigger">More About Me</a>
+  <!-- Hero Section -->
+<header class="masthead">
+  <div class="container-fluid">
+    <div class="hero-content">
+      <!-- Remove this line: <img class="hero-image" src="public/img/headshotbg.png" alt="GirishKumar Patchikoru"> -->
+      
+      <h1 class="hero-title">GirishKumar Patchikoru</h1>
+      <p class="hero-subtitle">I'm <span class="typed" data-typed-items="an AI Enthusiast, a Developer, a Software Engineer, a Problem Solver, a Tech Enthusiast"></span></p>
+      
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/girishkumarpatchikoru" class="social-icon" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/gpatchikoru" class="social-icon" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:girish5f9@gmail.com" class="social-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+13619055644" class="social-icon">
+          <i class="fas fa-phone"></i>
+        </a>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- About Section -->
-  <section class="about-section text-center">
-    <div id="about" class="container">
-      <br><br>
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="text-white mb-4">
-            Hey there! I'm GirishKumar, a Software Engineer with a passion for building scalable and efficient systems.
-          </h2>
-          <p class="text-white-50">
-            I specialize in full-stack development, DevOps, and cloud technologies with a proven track record of optimizing application performance,
-            implementing scalable architectures, and delivering high-impact solutions. I'm currently pursuing my Master's in Computer Science at
-            Texas A&M University-Corpus Christi, focusing on advanced software engineering and cloud computing.
-            <br><br>
-            My technical expertise includes React.js, Python, JavaScript, and cloud infrastructure, complemented by my dedication to
-            innovative problem-solving. I'm driven to create technology that addresses real-world challenges and delivers meaningful impact.
-            In my free time, I contribute to open-source projects, explore emerging technologies, and participate in hackathons.
-            <br><br>
-            Feel free to check out my <a href="https://linkedin.com/in/girishkumarpatchikoru">LinkedIn</a> or
-            <a href="https://github.com/gpatchikoru">GitHub</a> to learn more about my work and projects.
-            <br><br><br><br><br><br><br>
+  <section id="about" class="about-section">
+    <div class="container-fluid">
+      <h2 class="section-title">About</h2>
+      
+      <div class="about-content">
+        <div class="about-image-section">
+          <img class="about-image" src="public/img/headshot.png" alt="GirishKumar Patchikoru">
+        </div>
+        
+        <div class="about-text-section">
+          <h3>Aspiring Software & Cloud Engineer</h3>
+          
+          <p class="about-description">
+            Welcome! I'm GirishKumar Patchikoru, a passionate Software Engineer with expertise in building scalable and efficient systems. My journey brought me to Texas A&M University-Corpus Christi where I'm pursuing my Master's in Computer Science through academic excellence and dedication.
+          </p>
+          
+          <p class="about-description">
+            Currently, I'm a Software Engineering enthusiast deeply fascinated by cloud technologies, DevOps, and full-stack development. I enjoy diving into innovative possibilities and leveraging technology to make a meaningful impact. I'm all about creating solutions that address real-world challenges and delivering high-quality software products.
+          </p>
+          
+          <div class="about-details">
+  <div class="detail-item">
+    <i class="bi bi-chevron-right detail-chevron"></i>
+    <span class="detail-label">Website:</span>
+    <span class="detail-value">www.patchikoru.com</span>
+  </div>
+  <div class="detail-item">
+    <i class="bi bi-chevron-right detail-chevron"></i>
+    <span class="detail-label">Degree:</span>
+    <span class="detail-value">Master's in Computer Science</span>
+  </div>
+  <div class="detail-item">
+    <i class="bi bi-chevron-right detail-chevron"></i>
+    <span class="detail-label">Major:</span>
+    <span class="detail-value">Computer Science</span>
+  </div>
+  <div class="detail-item">
+    <i class="bi bi-chevron-right detail-chevron"></i>
+    <span class="detail-label">Email:</span>
+    <span class="detail-value">girish5f9@gmail.com</span>
+  </div>
+</div>
+
+<div class="position-section">
+  <div class="position-item">
+    <i class="bi bi-chevron-right detail-chevron"></i>
+    <span class="detail-label">Past Position:</span>
+    <span class="detail-value">Information Technology Student Worker @ TAMUCC</span>
+  </div>
+</div>
+          
+          <p class="about-description" style="margin-top: 2rem;">
+            When I'm not coding or studying, you'll find me contributing to open-source projects, exploring emerging technologies, and participating in hackathons. Creativity is at the core of who I am, and I believe in using it to enrich lives and solve challenges.
           </p>
         </div>
       </div>
@@ -108,504 +162,596 @@
   </section>
 
   <!-- Work Experience Section -->
-  <section class="work-section bg-light">
-    <div class="container" id="work">
-      <div class="work-title bg-black">
-        <!-- Title -->
-        <div class="row no-gutters bg-black mb-5 mb-lg-0">
-          <div class="workpadding">
-            <h2 class="text-white featured-text">Selected Work Experience</h2>
-            <br>
-            <p class="text-white-50">
-              Please see my
-              <a href="https://linkedin.com/in/girishkumarpatchikoru">LinkedIn</a> for the complete list of my past work experiences.
-            </p>
+  <section id="work" class="work-section">
+    <div class="container-fluid">
+      <h2 class="section-title">Selected Work Experience</h2>
+      <p style="text-align: center; color: #6c757d; margin-bottom: 50px;">
+        Please see my
+        <a href="https://linkedin.com/in/girishkumarpatchikoru" style="color: #667eea;">LinkedIn</a> 
+        for the complete list of my past work experiences.
+      </p>
+
+      <div class="experience-grid">
+        <!-- Texas A&M University -->
+        <div class="experience-card">
+          <div class="experience-header">
+            <img class="company-logo" src="public/img/tamucclogo.svg" alt="TAMU-CC Logo">
+            <div>
+              <h3>Texas A&M University-Corpus Christi</h3>
+              <div class="position-title">Information Technology Student Worker</div>
+            </div>
           </div>
-        </div>
-        <!-- Texas a&m Services -->
-        <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0">
-          <div class="col-lg-2 text-center">
-            <img class="circularlogo" src="public/img/tamucclogo.svg" alt="tamucclogo.svg" height="200">
+          <div class="experience-meta">
+            <span class="experience-date"><i class="fas fa-calendar-alt"></i> June 2024 – May 2025</span>
           </div>
-          <div class="col-lg-10">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <div class="workpadding">
-                    <h4 class="text-white">Texas A&M University-Corpus Christi</h4>
-                    <h4 class="text-white">Information Technology Student Worker</h4>
-                    <p class="text-white">May 2024 – Present</p>
-                    <ul class="mb-0 text-white-50">
-                      <li>
-                       Coordinated timely resolution: Managed and resolved support requests from faculty, staff, and students via phone, email, or on-site,
-ensuring efficient issue resolution and dispatching specialists as needed..
-                      </li>
-                      <li>
-                        Technical troubleshooting & training: Assisted students with registration and online courses, resolved hardware/software issues,
-troubleshot network connectivity problems, and trained users on hardware/software usage.  </li>
-                     
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <div class="experience-content">
+            <p>Coordinated timely resolution of support requests from faculty, staff, and students via phone, email, or on-site, ensuring efficient issue resolution and dispatching specialists as needed.</p>
+            <ul>
+              <li>Technical troubleshooting & training: Assisted students with registration and online courses, resolved hardware/software issues</li>
+              <li>Troubleshot network connectivity problems, and trained users on hardware/software usage</li>
+            </ul>
+            <div class="skills-tags">
+              <span class="skill-tag">Technical Support</span>
+              <span class="skill-tag">Network Troubleshooting</span>
+              <span class="skill-tag">User Training</span>
             </div>
           </div>
         </div>
+
         <!-- StylT Services -->
-        <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0">
-          <div class="col-lg-2 text-center">
-            <img class="circularlogo" src="public/img/styltlogo.jpeg" alt="styltlogo.jpeg" height="200">
+        <div class="experience-card">
+          <div class="experience-header">
+            <img class="company-logo" src="public/img/styltlogo.jpeg" alt="StylT Logo">
+            <div>
+              <h3>StylT Services(Volunteer)</h3>
+              <div class="position-title">Frontend Developer Intern(Remote)</div>
+            </div>
           </div>
-          <div class="col-lg-10">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <div class="workpadding">
-                    <h4 class="text-white">StylT Services</h4>
-                    <h4 class="text-white">Frontend Developer Intern</h4>
-                    <p class="text-white">Jul 2024 – Nov 2024</p>
-                    <ul class="mb-0 text-white-50">
-                      <li>
-                        Enhanced customer-facing web applications using React/Next.js, reducing page load times by 40%
-                        and carbon emissions by 20%.
-                      </li>
-                      <li>
-                        Implemented a modular component library with Redux, improving developer productivity by 30%.
-                      </li>
-                      <li>
-                        Integrated Power BI dashboards for 5,000+ active users, increasing user retention by 25%.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <div class="experience-meta">
+            <span class="experience-date"><i class="fas fa-calendar-alt"></i> Jul 2024 – Nov 2024</span>
+          </div>
+          <div class="experience-content">
+            <ul>
+              <li>Enhanced customer-facing web applications using React/Next.js, reducing page load times by 40% and carbon emissions by 20%</li>
+              <li>Implemented a modular component library with Redux, improving developer productivity by 30%</li>
+              <li>Integrated Power BI dashboards for 5,000+ active users, increasing user retention by 25%</li>
+            </ul>
+            <div class="skills-tags">
+              <span class="skill-tag">React/Next.js</span>
+              <span class="skill-tag">Redux</span>
+              <span class="skill-tag">Power BI</span>
             </div>
           </div>
         </div>
-        <!-- Icertiss Solutions -->
-        <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0">
-          <div class="col-lg-2 text-center">
-            <img class="circularlogo" src="public/img/icertislogo.jpeg" alt="icertislogo.jepg" height="200">
+
+        <!-- Icertis Solutions -->
+        <div class="experience-card">
+          <div class="experience-header">
+            <img class="company-logo" src="public/img/icertislogo.jpeg" alt="Icertis Logo">
+            <div>
+              <h3>Icertis Solutions Pvt Ltd</h3>
+              <div class="position-title">DevOps Engineer</div>
+            </div>
           </div>
-          <div class="col-lg-10">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <div class="workpadding">
-                    <h4 class="text-white">Icertiss Solutions Pvt Ltd</h4>
-                    <h4 class="text-white">DevOps Engineer</h4>
-                    <p class="text-white">Dates of Employment</p>
-                    <ul class="mb-0 text-white-50">
-                      <li>
-                        Backend Optimization & Automation – Led optimization efforts within the Core Platform DevOps team,
-                        reducing backend workload and improving system efficiency by automating Build Deployment failure resolutions.
-                      </li>
-                      <li>
-                        Feature Development & Efficiency Boost – Introduced a new feature in the ICMversion section of Build
-                        Deployment using a String feature, minimizing effort and enhancing workflow efficiency.
-                      </li>
-                      <li>
-                        System Stability & Data Management – Designed a Backup & Deletion strategy for the Operational Data Store (ODS),
-                        ensuring data integrity and optimizing storage management while improving overall system stability.
-                      </li>
-                      <li>
-                        Cross-Team Collaboration & Issue Resolution – Provided critical support to 50+ internal product and delivery teams,
-                        swiftly resolving failures and addressing backlog issues to ensure uninterrupted operations.
-                      </li>
-                      <li>
-                        Testing, Documentation & Infrastructure Development – Conducted thorough codebase testing, created comprehensive
-                        documentation, and played a key role in developing new infrastructures for testing Power BI report deployments.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <div class="experience-meta">
+            <span class="experience-date"><i class="fas fa-calendar-alt"></i> 2022 – 2023</span>
+          </div>
+          <div class="experience-content">
+            <ul>
+              <li>Backend Optimization & Automation – Led optimization efforts within the Core Platform DevOps team, reducing backend workload and improving system efficiency</li>
+              <li>Feature Development & Efficiency Boost – Introduced a new feature in the ICMversion section of Build Deployment using a String feature</li>
+              <li>System Stability & Data Management – Designed a Backup & Deletion strategy for the Operational Data Store (ODS)</li>
+              <li>Cross-Team Collaboration & Issue Resolution – Provided critical support to 50+ internal product and delivery teams</li>
+            </ul>
+            <div class="skills-tags">
+              <span class="skill-tag">DevOps</span>
+              <span class="skill-tag">Automation</span>
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Data Management</span>
             </div>
           </div>
         </div>
+
         <!-- Tata Consultancy -->
-        <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0">
-          <div class="col-lg-2 text-center">
-            <img class="circularlogo" src="public/img/tcslogo.jpeg" alt="tcslogo.jpeg" height="200">
-          </div>
-          <div class="col-lg-10">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <div class="workpadding">
-                    <h4 class="text-white">Tata Consultancy</h4>
-                    <h4 class="text-white">Java Engineer (Remote)</h4>
-                    <p class="text-white">Dates of Employment</p>
-                    <ul class="mb-0 text-white-50">
-                      <li>
-                        Legacy Modernization: Led migration of a monolithic telecom application (100K+ users) to a Spring Boot
-                        microservices architecture, improving API throughput by 35% and enabling 30% faster feature delivery.
-                      </li>
-                      <li>
-                        Performance Tuning: Upgraded a 7,000-line JavaScript codebase to ES6 standards, reducing runtime memory usage by
-                        25% and earning a Spotlight Award for technical excellence.
-                      </li>
-                      <li>
-                        Database Optimization: Restructured Oracle DB schemas and queries, reducing average query latency from 2s to 200ms
-                        and supporting 10x user growth without infrastructure scaling.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+        <div class="experience-card">
+          <div class="experience-header">
+            <img class="company-logo" src="public/img/tcslogo.jpeg" alt="TCS Logo">
+            <div>
+              <h3>Tata Consultancy Services</h3>
+              <div class="position-title">Java Engineer (Remote)</div>
             </div>
           </div>
-        </div><!--/ end row -->
-      </div><!--/ end work-title -->
-    </div><!--/ end container -->
-  </section>
-
-  <!-- Additional Activities Section -->
-  <section id="activities" class="experience">
-    <div class="container">
-      <h2 class="section-title">Additional Activities</h2>
-      <div class="activities-dashboard">
-        <!-- Left side - Activities List -->
-        <div class="activities-list">
-          <!-- NSLS -->
-          <div class="activity-item" data-activity="NSLS">
-            <div class="activity-header">
-              <h3>Student Member</h3>
-              <div class="activity-meta">
-                <span class="company">The National Society of Leadership and Success</span>
-                <span class="duration">Oct 2024 - Present</span>
-              </div>
-            </div>
+          <div class="experience-meta">
+            <span class="experience-date"><i class="fas fa-calendar-alt"></i> 2021 – 2022</span>
           </div>
-          <!-- ACM -->
-          <div class="activity-item" data-activity="acm">
-            <div class="activity-header">
-              <h3>Student Secretary</h3>
-              <div class="activity-meta">
-                <span class="company">ACM (Association for Computing Machinery)</span>
-                <span class="duration">June 2018 - July 2021</span>
-              </div>
-            </div>
-          </div>
-          <!-- Progate -->
-          <div class="activity-item" data-activity="progate">
-            <div class="activity-header">
-              <h3>Student Volunteer</h3>
-              <div class="activity-meta">
-                <span class="company">Progate</span>
-                <span class="duration">July 2020</span>
-              </div>
-            </div>
-          </div>
-          <!-- REGex Software Services -->
-          <div class="activity-item" data-activity="regex">
-            <div class="activity-header">
-              <h3>Campus Ambassador</h3>
-              <div class="activity-meta">
-                <span class="company">REGex Software Services</span>
-                <span class="duration">May 2020 - June 2020</span>
-              </div>
-            </div>
-          </div>
-          <!-- Indian Servers -->
-          <div class="activity-item" data-activity="indian-servers">
-            <div class="activity-header">
-              <h3>Machine Learning Intern</h3>
-              <div class="activity-meta">
-                <span class="company">Indian Servers</span>
-                <span class="duration">April 2020 - June 2020</span>
-              </div>
+          <div class="experience-content">
+            <ul>
+              <li>Legacy Modernization: Led migration of a monolithic telecom application (100K+ users) to a Spring Boot microservices architecture, improving API throughput by 35%</li>
+              <li>Performance Tuning: Upgraded a 7,000-line JavaScript codebase to ES6 standards, reducing runtime memory usage by 25%</li>
+              <li>Database Optimization: Restructured Oracle DB schemas and queries, reducing average query latency from 2s to 200ms</li>
+            </ul>
+            <div class="skills-tags">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">Microservices</span>
+              <span class="skill-tag">Oracle DB</span>
             </div>
           </div>
         </div>
-
-        <!-- Right side - Certificate Display -->
-        <div class="certificate-display">
-          <div class="default-message">
-            <p>Click on an activity to view the certificate</p>
-          </div>
-
-          <!-- Certificates hidden by default -->
-          <div class="certificate" id="NSLS-cert" style="display: none;">
-            <h3>Student Member</h3>
-            <img src="public/img/badge.png" alt="NSLS badge">
-            <div class="certificate-details">
-              <p>Service as Student Member for The National Society of Leadership and Success</p>
-            </div>
-          </div>
-
-          <div class="certificate" id="acm-cert" style="display: none;">
-            <h3>ACM Certificate</h3>
-            <img src="public/img/acm.png" alt="ACM Certificate">
-            <div class="certificate-details">
-              <p>Service as Student Secretary for the Association for Computing Machinery from June 2018 to July 2021.</p>
-            </div>
-          </div>
-
-          <div class="certificate" id="progate-cert" style="display: none;">
-            <h3>Progate Certificate</h3>
-            <img src="public/img/progate.png" alt="Progate Certificate">
-            <div class="certificate-details">
-              <p>This certificate acknowledges contribution as a Student Volunteer for Progate in July 2020.</p>
-            </div>
-          </div>
-
-          <div class="certificate" id="regex-cert" style="display: none;">
-            <h3>REGex Software Services Certificate</h3>
-            <img src="public/img/Regex.jpeg" alt="REGex Software Services Certificate">
-            <div class="certificate-details">
-              <p>This certificate is awarded for serving as Campus Ambassador for REGex Software Services from May 2020 to June 2020.</p>
-            </div>
-          </div>
-
-          <div class="certificate" id="indian-servers-cert" style="display: none;">
-            <h3>Indian Servers Certificate</h3>
-            <img src="public/img/IndianServers.png" alt="Indian Servers Certificate">
-            <div class="certificate-details">
-              <p>This certificate is for successfully completing the Machine Learning Internship at Indian Servers from April 2020 to June 2020.</p>
-            </div>
-          </div>
-        </div><!--/.certificate-display-->
-      </div><!--/.activities-dashboard-->
-    </div><!--/.container-->
+      </div>
+    </div>
   </section>
 
   <!-- Projects Section -->
-  <section class="projects-section bg-light">
-    <div class="container" id="projects">
-      <br><br>
-      <div class="workpadding">
-        <h2 class="text-black featured-text">Projects</h2>
-        <br>
-        <p class="text-black-50 mb-0">Below are some of the projects I've worked on.</p>
+<!-- Projects Section -->
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+  <div class="container-fluid">
+    <h2 class="section-title">Projects</h2>
+    <p style="text-align: center; color: #6c757d; margin-bottom: 50px;">
+      Here are some of the Projects I have done in my tech career. I am always eager to learn and build more! I feel these best describe my strengths!
+    </p>
+    <div class="projects-grid">
+      <!-- Cross Connect -->
+      <div class="project-card">
+        <div class="project-image-container">
+          <img class="project-image" src="public/img/Project1Image.png" alt="Cross Connect Project">
+          <div class="project-overlay">
+            <div class="overlay-icon" onclick="openImageModal('public/img/Project1Image.png', 'Cross Connect Project')" title="View Full Image">
+              <i class="bi bi-plus-circle"></i>
+            </div>
+            <a href="https://github.com/gpatchikoru/cross-connect/" class="overlay-icon" target="_blank" title="View Code">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="tech-tags">
+            <div class="tech-text">Node.js, React, Socket.io, MongoDB, Express</div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h4 class="project-title">Distributed E-Commerce Platform - Cross Connect</h4>
+        </div>
       </div>
 
-      <!-- Cross Connect -->
-      <div class="row justify-content-center no-gutters">
-        <div class="col-lg-6 bg-black">
-          <img class="img-fluid" src="public/img/Project1Image.png" alt="Project1Image">
-        </div>
-        <div class="col-lg-6 order-lg-first">
-          <div class="bg-black text-center h-100 project">
-            <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-lg-right">
-                <h4 class="text-white">Distributed E-Commerce Platform-Cross Connect</h4>
-                <p class="mb-0 text-white-50">
-                  A secure e-commerce platform connecting 100,000+ Indian users with local agents via real-time tracking and Socket.io chat.
-                </p>
-                <a href="https://github.com/gpatchikoru/cross-connect/" class="btn">View Project</a>
-                <hr class="d-none d-lg-block mb-0 mr-0">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <!-- GeoViz Explorer -->
-      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-        <div class="col-lg-6 bg-black">
-          <img class="img-fluid" src="public/img/geo.jpg" alt="Project2Image">
-        </div>
-        <div class="col-lg-6">
-          <div class="bg-black text-center h-100 project">
-            <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-lg-left">
-                <h4 class="text-white">Real-Time Geospatial Analytics Engine</h4>
-                <p class="mb-0 text-white-50">
-                  An interactive mapping system for 52 US locations, utilizing dynamic charts and optimized data pipelines.
-                </p>
-                <a href="https://github.com/gpatchikoru/geovizproject" class="btn">View Project</a>
-                <hr class="d-none d-lg-block mb-0 ml-0">
-              </div>
+      <div class="project-card">
+        <div class="project-image-container">
+          <img class="project-image" src="public/img/geo.jpg" alt="GeoViz Project">
+          <div class="project-overlay">
+            <div class="overlay-icon" onclick="openImageModal('public/img/geo.jpg', 'GeoViz Project')" title="View Full Image">
+              <i class="bi bi-plus-circle"></i>
             </div>
+            <a href="https://github.com/gpatchikoru/geovizproject" class="overlay-icon" target="_blank" title="View Code">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="tech-tags">
+            <div class="tech-text">Python, D3.js, PostgreSQL, Leaflet, Flask</div>
           </div>
         </div>
+        <div class="project-content">
+          <h4 class="project-title">Real-Time Geospatial Analytics Engine</h4>
+        </div>
       </div>
+
       <!-- Emotion-Based Learning Platform -->
-      <div class="row justify-content-center no-gutters">
-        <div class="col-lg-6 bg-black">
-          <img class="img-fluid" src="public/img/project3.webp" alt="Project3Image">
-        </div>
-        <div class="col-lg-6 order-lg-first">
-          <div class="bg-black text-center h-100 project">
-            <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-lg-right">
-                <h4 class="text-white">AI-Powered Adaptive Learning System</h4>
-                <p class="mb-0 text-white-50">
-                  An adaptive learning application with real-time emotion detection and JWT-based authentication, boosting engagement by 85%.
-                </p>
-                <a href="https://github.com/gpatchikoru/Adaptive-Learning-via-Emotion-Feedback---Interactive-Gaming-Platform-"
-                   class="btn">View Project</a>
-                <hr class="d-none d-lg-block mb-0 mr-0">
-              </div>
+      <div class="project-card">
+        <div class="project-image-container">
+          <img class="project-image" src="public/img/project3.webp" alt="AI Learning Project">
+          <div class="project-overlay">
+            <div class="overlay-icon" onclick="openImageModal('public/img/project3.webp', 'AI Learning Project')" title="View Full Image">
+              <i class="bi bi-plus-circle"></i>
             </div>
+            <a href="https://github.com/gpatchikoru/Adaptive-Learning-via-Emotion-Feedback---Interactive-Gaming-Platform-" class="overlay-icon" target="_blank" title="View Code">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="tech-tags">
+            <div class="tech-text">TensorFlow, OpenCV, React, JWT, Python</div>
           </div>
         </div>
+        <div class="project-content">
+          <h4 class="project-title">AI-Powered Adaptive Learning System</h4>
+        </div>
       </div>
-    </div><!--/.container-->
+
+      <!-- Cloud Infrastructure Automation -->
+      <div class="project-card">
+        <div class="project-image-container">
+          <img class="project-image" src="public/img/EchoBoard.png" alt="Book-Themed Memory Journal">
+          <div class="project-overlay">
+            <div class="overlay-icon" onclick="openImageModal('public/img/EchoBoard1.png', 'Book-Themed Memory Journal')" title="View Full Image">
+              <i class="bi bi-plus-circle"></i>
+            </div>
+            <a href="https://github.com/gpatchikoru/Echoboard" class="overlay-icon" target="_blank" title="View Code">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="tech-tags">
+            <div class="tech-text">React, Nextjs, Tailwind, Docker</div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h4 class="project-title">EchoBoard — Book-Themed Memory Journal</h4>
+        </div>
+      </div>
+
+      <!-- Real-Time Chat Application -->
+      <div class="project-card">
+        <div class="project-image-container">
+          <img class="project-image" src="public/img/wsnsprotocol.png" alt="Protocols Simulation">
+          <div class="project-overlay">
+            <div class="overlay-icon" onclick="openImageModal('public/img/wsnprotocol1.png', 'Protocols Simulation')" title="View Full Image">
+              <i class="bi bi-plus-circle"></i>
+            </div>
+            <a href="https://github.com/gpatchikoru/Secure-and-Energy-Efficient-Protocols-in-Wireless-Sensor-Networks-WSNs-/tree/main" class="overlay-icon" target="_blank" title="View Code">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="tech-tags">
+            <div class="tech-text">AES, SPECK, PRESENT, SelectiveEncryption</div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h4 class="project-title">Efficient Protocols in Wireless Sensor Networks (WSNs)</h4>
+        </div>
+      </div>
+
+      <!-- Machine Learning Image Classifier -->
+      <div class="project-card">
+        <div class="project-image-container">
+          <img class="project-image" src="public/img/protocolsensor.png" alt="Sensor Networks Simulation">
+          <div class="project-overlay">
+            <div class="overlay-icon" onclick="openImageModal('public/img/protocolsensor.png', 'Sensor Networks Simulation')" title="View Full Image">
+              <i class="bi bi-plus-circle"></i>
+            </div>
+            <a href="https://github.com/gpatchikoru/Protocol-Implementation-and-Performance-Analysis" class="overlay-icon" target="_blank" title="View Code">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="tech-tags">
+            <div class="tech-text">LEACH, MTE, Python, simulates,Protocols</div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h4 class="project-title">Sensor Networks Simulation with LEACH, Direct, and MTE Protocols</h4>
+        </div>
+      </div>
+
+      <!-- Financial Data API -->
+      <div class="project-card">
+        <div class="project-image-container">
+          <img class="project-image" src="public/img/financial-api.jpg" alt="Financial API Project">
+          <div class="project-overlay">
+            <div class="overlay-icon" onclick="openImageModal('public/img/financial-api.jpg', 'Financial API Project')" title="View Full Image">
+              <i class="bi bi-plus-circle"></i>
+            </div>
+            <a href="https://github.com/gpatchikoru/financial-api" class="overlay-icon" target="_blank" title="View Code">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="tech-tags">
+            <div class="tech-text">Spring Boot, PostgreSQL, REST API, JWT, Microservices</div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h4 class="project-title">RESTful Financial Data API</h4>
+        </div>
+      </div>
+
+      <!-- DevOps CI/CD Pipeline -->
+      <div class="project-card">
+        <div class="project-image-container">
+          <img class="project-image" src="public/img/cicd-pipeline.jpg" alt="CI/CD Pipeline Project">
+          <div class="project-overlay">
+            <div class="overlay-icon" onclick="openImageModal('public/img/cicd-pipeline.jpg', 'CI/CD Pipeline Project')" title="View Full Image">
+              <i class="bi bi-plus-circle"></i>
+            </div>
+            <a href="https://github.com/gpatchikoru/cicd-framework" class="overlay-icon" target="_blank" title="View Code">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="tech-tags">
+            <div class="tech-text">Jenkins, Docker, Kubernetes, AWS, GitLab CI</div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h4 class="project-title">Automated CI/CD Pipeline Framework</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Image Modal -->
+  <div id="project-image-modal" class="project-image-modal">
+    <div class="modal-image-content">
+      <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+      <img id="modal-project-image" src="" alt="">
+    </div>
+  </div>
+
+  <script>
+    // Project Image Modal Functions
+    function openImageModal(imageSrc, altText) {
+      const modal = document.getElementById('project-image-modal');
+      const modalImg = document.getElementById('modal-project-image');
+      
+      modalImg.src = imageSrc;
+      modalImg.alt = altText;
+      modal.classList.add('show');
+    }
+    
+    function closeImageModal() {
+      const modal = document.getElementById('project-image-modal');
+      modal.classList.remove('show');
+    }
+    
+    // Close modal when clicking outside the image
+    document.getElementById('project-image-modal').addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeImageModal();
+      }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeImageModal();
+      }
+    });
+  </script>
+</section>
+
+  <!-- Activities Section -->
+  <section id="activities" class="activities-section">
+    <div class="container-fluid">
+      <h2 class="section-title">Organizations and Leadership Experience</h2>
+      <p style="text-align: center; color: #6c757d; margin-bottom: 50px;">
+        Here are some organizations, both on and off campus, I am involved in!
+      </p>
+      
+      <div class="activities-grid">
+        <!-- NSLS -->
+        <div class="activity-card" data-activity="NSLS">
+          <img class="activity-image" src="public/img/badge.png" alt="NSLS badge">
+          <h3 class="activity-title">Student Mentor</h3>
+          <div class="activity-company">The National Society of Leadership and Success</div>
+          <div class="activity-duration">Oct 2024 - Present</div>
+        </div>
+        <!-- NSLS -->
+        <div class="activity-card" data-activity="Cybersociety">
+          <img class="activity-image" src="public/img/islandercybersociety.jpeg" alt="Cybersociety">
+          <h3 class="activity-title">Student Member</h3>
+          <div class="activity-company">Islander Cyber Society</div>
+          <div class="activity-duration">Aug 2023 - May 2025</div>
+        </div>
+
+        <!-- ACM -->
+        <div class="activity-card" data-activity="acm">
+          <img class="activity-image" src="public/img/acmlogo.png" alt="ACM Certificate">
+          <h3 class="activity-title">Student Secretary</h3>
+          <div class="activity-company">ACM (Association for Computing Machinery)</div>
+          <div class="activity-duration">June 2018 - July 2021</div>
+        </div>
+
+        <!-- Progate -->
+        <div class="activity-card" data-activity="progate">
+          <img class="activity-image" src="public/img/progate.png" alt="Progate Certificate">
+          <h3 class="activity-title">Student Volunteer</h3>
+          <div class="activity-company">Progate</div>
+          <div class="activity-duration">July 2020</div>
+        </div>
+
+        <!-- REGex Software Services -->
+        <div class="activity-card" data-activity="regex">
+          <img class="activity-image" src="public/img/Regex.jpeg" alt="REGex Software Services Certificate">
+          <h3 class="activity-title">Campus Ambassador</h3>
+          <div class="activity-company">REGex Software Services</div>
+          <div class="activity-duration">May 2020 - June 2020</div>
+        </div>
+
+        <!-- Indian Servers -->
+        <div class="activity-card" data-activity="indian-servers">
+          <img class="activity-image" src="public/img/IndianServers.png" alt="Indian Servers Certificate">
+          <h3 class="activity-title">Machine Learning Intern</h3>
+          <div class="activity-company">Indian Servers</div>
+          <div class="activity-duration">April 2020 - June 2020</div>
+        </div>
+        <!--story published -->
+        <div class="activity-card" data-activity="story Published">
+          <img class="activity-image" src="public/img/story.png" alt="Story Published">
+          <h3 class="activity-title">Leadership Story Published</h3>
+          <div class="activity-company">Young Influx</div>
+          <div class="activity-duration">July 2020</div>
+          <a href="https://www.younginflux.com/leadership-journey-p-girish-kumar-sasi-institute-of-technology-and-engineering-tadepalligudem/ " class="cert-link" target="_blank">
+             Check the Story <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Certifications Section -->
-  <section id="certifications" class="certifications" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-title">Certifications</h2>
-      <div class="cert-and-papers-grid">
-        <!-- LEFT COLUMN -->
-        <div class="cert-col">
-          <h3>Certifications</h3>
-          <ul class="certificate-list">
-            <li>
-              <button class="cert-toggle">
-                <span class="toggle-symbol">+</span>
-                Google Cloud Certified - Professional Cloud Architect
-              </button>
-              <div class="cert-details">
-                <p>
-                  <a href="https://www.credly.com/badges/6d87c052-2169-41a8-bf89-5ca961de9dba/linked_in_profile"
-                     target="_blank">
-                    <img src="public/img/courserag.png" alt="Certificate 4">
-                  </a>
-                </p>
-              </div>
-            </li>
-            <li>
-              <button class="cert-toggle">
-                <span class="toggle-symbol">+</span>
-                DevOps Foundations: Continuous Delivery/Continuous Integration
-              </button>
-              <div class="cert-details">
-                <p>
-                  <a href="https://www.linkedin.com/learning/certificates/c0c984ff1ca68d026ed8431347108ab326c2b27a78ffb05bc5612dad9d9e1a98"
-                     target="_blank">
-                    <img src="public/img/devops.png" alt="Certificate 1">
-                  </a>
-                </p>
-              </div>
-            </li>
-            <li>
-              <button class="cert-toggle">
-                <span class="toggle-symbol">+</span>
-                Microsoft Certified: Azure AI Fundamentals
-              </button>
-              <div class="cert-details">
-                <p>
-                  <a href="https://www.credly.com/badges/70163e6e-892b-4c2e-aa73-1fc9995b52f6/linked_in_profile"
-                     target="_blank">
-                    <img src="public/img/azureai.png" alt="Certificate 2">
-                  </a>
-                </p>
-              </div>
-            </li>
-            <li>
-              <button class="cert-toggle">
-                <span class="toggle-symbol">+</span>
-                Microsoft Certified: Azure Data Fundamentals
-              </button>
-              <div class="cert-details">
-                <p>
-                  <a href="https://www.credly.com/badges/9b3e3d8d-f51f-4ff3-a107-64b90f2e2424/linked_in_profile"
-                     target="_blank">
-                    <img src="public/img/azuredata.png" alt="Certificate 2">
-                  </a>
-                </p>
-              </div>
-            </li>
-            <li>
-              <button class="cert-toggle">
-                <span class="toggle-symbol">+</span>
-                Microsoft Certified: Azure Fundamentals
-              </button>
-              <div class="cert-details">
-                <p>
-                  <a href="https://www.credly.com/badges/e4501d23-c381-433e-bbb7-eb15e00ac2e0/linked_in_profile"
-                     target="_blank">
-                    <img src="public/img/azurefun.png" alt="Certificate 2">
-                  </a>
-                </p>
-              </div>
-            </li>
-          </ul>
+  <section class="certifications-section">
+    <div class="container-fluid">
+      <h2 class="section-title">Courses and Certifications</h2>
+      <p style="text-align: center; color: #6c757d; margin-bottom: 50px;">
+        What you focus on <strong>grows</strong>!
+      </p>
+      
+      
+      <div class="certifications-grid">
+        <div class="certification-card">
+          <img class="cert-image" src="public/img/DeveloperAssociate.png" alt="Azure Developer Associate Certificate">
+          <div class="cert-content">
+            <h3 class="cert-title">Azure Developer Associate Certificate</h3>
+            <div class="cert-provider">Microsoft Certified</div>
+            <div class="cert-date">2025</div>
+            <a href="https://learn.microsoft.com/en-us/users/patchikorugirishkumar-6118/credentials/a8e5461bf0a879eb?ref=https%3A%2F%2Fwww.linkedin.com%2F" class="cert-link" target="_blank">
+              View Certificate <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+      </div>
+        <!-- Google Cloud Certified -->
+        <div class="certification-card">
+          <img class="cert-image" src="public/img/courserag.png" alt="Google Cloud Certificate">
+          <div class="cert-content">
+            <h3 class="cert-title">Google Data Analytics</h3>
+            <div class="cert-provider">Professional Cloud Architect</div>
+            <div class="cert-date">2024</div>
+            <a href="https://www.credly.com/badges/6d87c052-2169-41a8-bf89-5ca961de9dba/linked_in_profile" class="cert-link" target="_blank">
+              View Certificate <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
         </div>
-        <!-- RIGHT COLUMN -->
-        <div class="papers-col">
-          <h3>Published Papers</h3>
-          <ul class="papers-list">
-            <li>
-              <strong>Blockchain - Based Voting System Using Face Recognition</strong>
-              International Journal of Trend in Research and Development, Volume 8(6), ISSN: 2394-9333, 2021
-              <a href="https://www.ijtrd.com/papers/IJTRD25080.pdf" target="_blank">View PDF</a>
-            </li>
-            <li>
-              <strong>Virtual Dressing Room Using OpenCV</strong>
-              International Journal of Innovative Research in Science, Engineering and Technology (IJIRSET)
-              | e-ISSN: 2319-8753, p-ISSN: 2347-6710 | Impact Factor: 7.569
-              <br>Volume 10, Issue 12, December 2021 | DOI:10.15680/IJIRSET.2021.1012028
-              <a href="https://www.ijirset.com/upload/2021/december/28_Virtual.pdf" target="_blank">View PDF</a>
-            </li>
-            <li>
-              <strong>An Innovative Way Recommend Products in E-Commerce</strong>
-              International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056
-              Volume: 08 Issue: 12 | Dec 2021
-              <a href="https://www.irjet.net/archives/V8/i12/IRJET-V8I1232.pdf" target="_blank">View PDF</a>
-            </li>
-          </ul>
+
+        <!-- DevOps Foundations -->
+        <div class="certification-card">
+          <img class="cert-image" src="public/img/devops.png" alt="DevOps Certificate">
+          <div class="cert-content">
+            <h3 class="cert-title">DevOps Foundations</h3>
+            <div class="cert-provider">Continuous Delivery/CI</div>
+            <div class="cert-date">LinkedIn Learning</div>
+            <a href="https://www.linkedin.com/learning/certificates/c0c984ff1ca68d026ed8431347108ab326c2b27a78ffb05bc5612dad9d9e1a98" class="cert-link" target="_blank">
+              View Certificate <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
         </div>
+
+        <!-- Azure AI Fundamentals -->
+        <div class="certification-card">
+          <img class="cert-image" src="public/img/azureai.png" alt="Azure AI Certificate">
+          <div class="cert-content">
+            <h3 class="cert-title">Azure AI Fundamentals</h3>
+            <div class="cert-provider">Microsoft Certified</div>
+            <div class="cert-date">2022</div>
+            <a href="https://www.credly.com/badges/70163e6e-892b-4c2e-aa73-1fc9995b52f6/linked_in_profile" class="cert-link" target="_blank">
+              View Certificate <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Azure Data Fundamentals -->
+        <div class="certification-card">
+          <img class="cert-image" src="public/img/azuredata.png" alt="Azure Data Certificate">
+          <div class="cert-content">
+            <h3 class="cert-title">Azure Data Fundamentals</h3>
+            <div class="cert-provider">Microsoft Certified</div>
+            <div class="cert-date">2023</div>
+            <a href="https://www.credly.com/badges/9b3e3d8d-f51f-4ff3-a107-64b90f2e2424/linked_in_profile" class="cert-link" target="_blank">
+              View Certificate <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Azure Fundamentals -->
+        <div class="certification-card">
+          <img class="cert-image" src="public/img/azurefun.png" alt="Azure Fundamentals Certificate">
+          <div class="cert-content">
+            <h3 class="cert-title">Azure Fundamentals</h3>
+            <div class="cert-provider">Microsoft Certified</div>
+            <div class="cert-date">2022</div>
+            <a href="https://www.credly.com/badges/e4501d23-c381-433e-bbb7-eb15e00ac2e0/linked_in_profile" class="cert-link" target="_blank">
+              View Certificate <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Papers Section -->
+  <section class="research-section">
+    <div class="container-fluid">
+      <h2 class="section-title">Published Research Papers</h2>
+      
+      <div class="research-grid">
+        <!-- Paper 1: Blockchain Voting System -->
+        <a href="https://www.ijtrd.com/papers/IJTRD25080.pdf" target="_blank" class="research-card">
+          <div style="position: relative;">
+            <img class="research-image" src="public/img/Blockchain.png" alt="Blockchain Voting Paper">
+            <div class="research-overlay">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <span class="research-badge" style="position: absolute; top: 15px; right: 15px;">Blockchain</span>
+          </div>
+          <div class="research-content">
+            <h3 class="research-title">Blockchain-Based Voting System Using Face Recognition</h3>
+            <div class="research-journal">International Journal of Trend in Research and Development</div>
+            <div class="research-details">Volume 8(6), ISSN: 2394-9333</div>
+          </div>
+        </a>
+
+        <!-- Paper 2: Virtual Dressing Room -->
+        <a href="https://www.ijirset.com/upload/2021/december/28_Virtual.pdf" target="_blank" class="research-card">
+          <div style="position: relative;">
+            <img class="research-image" src="public/img/virtualdressing.png" alt="Virtual Dressing Room Paper">
+            <div class="research-overlay">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <span class="research-badge" style="position: absolute; top: 15px; right: 15px;">Computer Vision</span>
+          </div>
+          <div class="research-content">
+            <h3 class="research-title">Virtual Dressing Room Using OpenCV</h3>
+            <div class="research-journal">International Journal of Innovative Research in Science, Engineering and Technology (IJIRSET)</div>
+            <div class="research-details">Volume 10, Issue 12, December 2021</div>
+          </div>
+        </a>
+
+        <!-- Paper 3: E-Commerce Recommendation -->
+        <a href="https://www.irjet.net/archives/V8/i12/IRJET-V8I1232.pdf" target="_blank" class="research-card">
+          <div style="position: relative;">
+            <img class="research-image" src="public/img/E-Commerce.png" alt="E-Commerce Recommendation Paper">
+            <div class="research-overlay">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <span class="research-badge" style="position: absolute; top: 15px; right: 15px;">Machine Learning</span>
+          </div>
+          <div class="research-content">
+            <h3 class="research-title">An Innovative Way to Recommend Products in E-Commerce</h3>
+            <div class="research-journal">International Research Journal of Engineering and Technology (IRJET)</div>
+            <div class="research-details">Volume 08, Issue 12 </div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="signup" class="contact-section bg-black">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-lg-8 mx-auto text-center">
-          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-          <h2 class="text-white mb-5">Connect with me!</h2>
-          <br><br>
-        </div>
+  <section id="contact" class="contact-section">
+    <div class="container-fluid">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <i class="far fa-paper-plane" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+        <h2 class="section-title" style="color: white; margin-bottom: 0;">Connect with me!</h2>
       </div>
-    </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-envelope text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Email</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">
-                <a href="mailto:girish5f9@gmail.com">girish5f9@gmail.com</a>
-              </div>
-            </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="fas fa-envelope contact-icon"></i>
+          <h4 class="contact-title">Email</h4>
+          <div class="contact-info">
+            <a href="mailto:girish5f9@gmail.com">girish5f9@gmail.com</a>
           </div>
         </div>
 
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-user-friends text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Socials</h4>
-              <hr class="my-4">
-              <div class="social">
-                <a href="https://linkedin.com/in/girishkumarpatchikoru" class="mx-2">
-                  <i class="fab fa-linkedin iconbig"></i>
-                </a>
-                <a href="https://github.com/gpatchikoru" class="mx-2">
-                  <i class="fab fa-github iconbig"></i>
-                </a>
-              </div>
-            </div>
+        <div class="contact-card">
+          <i class="fas fa-user-friends contact-icon"></i>
+          <h4 class="contact-title">Socials</h4>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/girishkumarpatchikoru" class="social-link" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/gpatchikoru" class="social-link" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
           </div>
         </div>
 
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-mobile-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Phone</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">+1 (361) 905-5644</div>
-            </div>
+        <div class="contact-card">
+          <i class="fas fa-mobile-alt contact-icon"></i>
+          <h4 class="contact-title">Phone</h4>
+          <div class="contact-info">
+            <a href="tel:+13619055644">+1 (361) 905-5644</a>
           </div>
         </div>
       </div>
@@ -613,80 +759,250 @@ troubleshot network connectivity problems, and trained users on hardware/softwar
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black small text-center text-white-50">
-    <div class="container">&copy; 2024 GirishKumar Patchikoru</div>
+  <footer class="footer">
+    <div class="container-fluid">
+      &copy; 2024 GirishKumar Patchikoru. All rights reserved.
+    </div>
   </footer>
 
+  <!-- Certificate Modal -->
+  <div id="certificate-modal" class="certificate-modal">
+    <div class="certificate">
+      <span class="modal-close" onclick="closeCertificateModal()">&times;</span>
+      <div id="modal-certificate-content">
+        <!-- Dynamic content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap core JavaScript -->
-  <script src="public/vendor/jquery/jquery.min.js"></script>
-  <script src="public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="public/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="public/js/grayscale.min.js"></script>
   <script>
-    // Ensure Resume button is visible
-    $("#resume-button").css('visibility', 'visible');
-  </script>
-
-  <!-- Enhanced Behavior: Activities & Certificates -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Activities:
-      const activityItems = document.querySelectorAll('.activity-item');
-      const certificates = document.querySelectorAll('.certificate');
-      const defaultMessage = document.querySelector('.default-message');
-
-      // 1) Add event listeners to each activity item
-      activityItems.forEach(item => {
-        item.addEventListener('click', function () {
-          // Remove 'active' from all
-          activityItems.forEach(i => i.classList.remove('active'));
-          // Add 'active' to the clicked one
-          this.classList.add('active');
-
-          // Hide default message, hide all certificates
-          if (defaultMessage) defaultMessage.style.display = 'none';
-          certificates.forEach(cert => cert.style.display = 'none');
-
-          // Show the corresponding certificate
-          const activityId = this.getAttribute('data-activity');
-          const certificateElement = document.getElementById(`${activityId}-cert`);
-          if (certificateElement) {
-            certificateElement.style.display = 'block';
-          }
-        });
-      });
-
-      // 2) Auto-click the first activity so it displays by default
-      if (activityItems.length > 0) {
-        activityItems[0].click();
+    // Certificate modal functionality
+    function openCertificateModal(activityId) {
+      const modal = document.getElementById('certificate-modal');
+      const modalContent = document.getElementById('modal-certificate-content');
+      
+      const certificates = {
+        'NSLS': {
+          title: 'Student Member',
+          image: 'public/img/badge.png',
+          description: 'Service as Student Member for The National Society of Leadership and Success',
+          company: 'The National Society of Leadership and Success',
+          duration: 'Oct 2024 - Present'
+        },
+        'acm': {
+          title: 'ACM Certificate',
+          image: 'public/img/acm.png',
+          description: 'Service as Student Secretary for the Association for Computing Machinery from June 2018 to July 2021.',
+          company: 'ACM (Association for Computing Machinery)',
+          duration: 'June 2018 - July 2021'
+        },
+        'progate': {
+          title: 'Progate Certificate',
+          image: 'public/img/progate.png',
+          description: 'This certificate acknowledges contribution as a Student Volunteer for Progate in July 2020.',
+          company: 'Progate',
+          duration: 'July 2020'
+        },
+        'regex': {
+          title: 'REGex Software Services Certificate',
+          image: 'public/img/Regex.jpeg',
+          description: 'This certificate is awarded for serving as Campus Ambassador for REGex Software Services from May 2020 to June 2020.',
+          company: 'REGex Software Services',
+          duration: 'May 2020 - June 2020'
+        },
+        'indian-servers': {
+          title: 'Indian Servers Certificate',
+          image: 'public/img/IndianServers.png',
+          description: 'This certificate is for successfully completing the Machine Learning Internship at Indian Servers from April 2020 to June 2020.',
+          company: 'Indian Servers',
+          duration: 'April 2020 - June 2020'
+        }
+      };
+      
+      const cert = certificates[activityId];
+      if (cert) {
+        modalContent.innerHTML = `
+          <h3>${cert.title}</h3>
+          <img src="${cert.image}" alt="${cert.title}">
+          <div class="certificate-details">
+            <p><strong style="color: #667eea;">Company:</strong> ${cert.company}</p>
+            <p><strong style="color: #667eea;">Duration:</strong> ${cert.duration}</p>
+            <p><strong style="color: #667eea;">Description:</strong> ${cert.description}</p>
+          </div>
+        `;
+        modal.classList.add('show');
       }
-
-      // Certificates:
-      // a) Hide plus symbols and collapse everything by default
-      const certToggles = document.querySelectorAll('.cert-toggle');
-      const certDetails = document.querySelectorAll('.cert-details');
-      certDetails.forEach(d => d.classList.remove('show-cert'));
-      // Show the first cert
-      if (certDetails.length > 0) certDetails[0].classList.add('show-cert');
-
-      certToggles.forEach(toggle => {
-        const sym = toggle.querySelector('.toggle-symbol');
-        if (sym) sym.style.display = 'none';
-
-        toggle.addEventListener('click', function () {
-          // Collapse all others
-          certDetails.forEach(d => d.classList.remove('show-cert'));
-          // Expand only this one
-          const detail = this.nextElementSibling;
-          detail.classList.add('show-cert');
+    }
+    
+    function closeCertificateModal() {
+      const modal = document.getElementById('certificate-modal');
+      modal.classList.remove('show');
+    }
+    
+    // Add click event listeners to activity items
+    document.addEventListener('DOMContentLoaded', function() {
+      const activityItems = document.querySelectorAll('.activity-card');
+      
+      activityItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const activityId = this.getAttribute('data-activity');
+          openCertificateModal(activityId);
         });
       });
     });
-  </script>
+    
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('certificate-modal');
+      if (event.target === modal) {
+        closeCertificateModal();
+      }
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeCertificateModal();
+      }
+    });
 
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('mainNav');
+      if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+      } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+      }
+    });
+
+    // Add smooth animations on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all cards and sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.experience-card, .project-card, .activity-card, .certification-card, .research-card');
+      elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+    });
+    /* Add this to your existing JavaScript */
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Typed.js for hero subtitle
+      const typed = new Typed('.typed', {
+        strings: ['an AI Enthusiast', 'a Developer', 'a Software Engineer', 'a Problem Solver', 'a Tech Enthusiast'],
+        typeSpeed: 80,
+        backSpeed: 50,
+        backDelay: 2000,
+        startDelay: 1000,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|',
+        smartBackspace: true
+      });
+    });
+    // Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('#mainNav .nav-link');
+  const sections = document.querySelectorAll('section, header');
+
+  function updateActiveNav() {
+    let current = '';
+    const scrollPos = window.scrollY + 100;
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      const sectionId = section.getAttribute('id');
+      
+      if (scrollPos >= sectionTop && scrollPos <= sectionTop + sectionHeight) {
+        current = sectionId;
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      const href = link.getAttribute('href').substring(1);
+      if (href === current || (current === '' && href === 'page-top')) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // Throttled scroll handler
+  let ticking = false;
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateActiveNav);
+      ticking = true;
+      setTimeout(() => ticking = false, 100);
+    }
+  }
+
+  window.addEventListener('scroll', requestTick);
+  updateActiveNav();
+  
+  // Click handlers
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+});
+  // Make detail items clickable
+document.querySelectorAll('.detail-item').forEach(item => {
+  item.addEventListener('click', function() {
+    const value = this.querySelector('.detail-value').textContent;
+    
+    // Example actions based on the detail type
+    if (value.includes('@')) {
+      // Email - open mail client
+      window.location.href = `mailto:${value}`;
+    } else if (value.includes('.')) {
+      // Website - open in new tab
+      window.open(`https://${value}`, '_blank');
+    } else {
+      // Other items - you can add custom actions
+      console.log('Clicked:', value);
+    }
+  });
+});
+</script>
 </body>
 </html>
