@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="GirishKumar Patchikoru, Android Developer. Kotlin, Jetpack Compose, MVVM, and high-performance mobile apps.">
+<meta name="author" content="GirishKumar Patchikoru">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="GirishKumar Patchikoru | Android Developer">
+<meta property="og:description" content="Android Developer: Kotlin, Jetpack, MVVM, Jetpack Compose, Firebase.">
+<meta property="og:url" content="https://patchikoru.com/android">
+<title>GirishKumar Patchikoru | Android Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0e13;
+    --surface:#13161d;
+    --surface-2:#1a1e27;
+    --line:#252b36;
+    --line-soft:#1c212b;
+    --text:#d7dce4;
+    --text-strong:#f3f5f9;
+    --muted:#828c9b;
+    --primary:#3ddc84;          /* android green */
+    --primary-dim:rgba(61,220,132,.12);
+    --accent:#a78bfa;           /* violet */
+    --accent-dim:rgba(167,139,250,.12);
+    --display:"Sora",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(820px 480px at 80% -6%, rgba(61,220,132,.08), transparent 60%),
+      radial-gradient(680px 460px at -4% 14%, rgba(167,139,250,.07), transparent 56%);
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1}
+  a{color:inherit;text-decoration:none}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--primary);text-transform:lowercase;display:inline-flex;gap:.5em;align-items:center}
+  .eyebrow::before{content:"▸";color:var(--accent)}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px);background:rgba(12,14,19,.72);border-bottom:1px solid transparent;transition:border-color .3s, background .3s}
+  nav.scrolled{border-bottom-color:var(--line);background:rgba(12,14,19,.92)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--text-strong);letter-spacing:-.01em}
+  .brand .b-accent{color:var(--primary)}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:.8rem;color:var(--muted);transition:color .2s;position:relative}
+  .nav-links a:hover{color:var(--text-strong)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--primary);transition:width .25s}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{font-family:var(--mono);font-size:.78rem;color:var(--bg)!important;background:var(--primary);padding:8px 14px;border-radius:20px;font-weight:600;transition:transform .2s, box-shadow .2s}
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(61,220,132,.3)}
+  .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.4rem;cursor:pointer}
+
+  /* HERO */
+  header{padding:140px 0 70px}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+  .hero h1{font-family:var(--display);font-weight:700;letter-spacing:-.025em;line-height:1.03;font-size:clamp(2.4rem,5.2vw,4rem);color:var(--text-strong);margin:18px 0 8px}
+  .hero h1 .role{display:block;color:var(--primary)}
+  .hero-sub{color:var(--muted);font-size:1.05rem;max-width:36ch;margin-bottom:24px}
+  .hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+  .hchip{font-family:var(--mono);font-size:.74rem;color:var(--text);background:var(--surface);border:1px solid var(--line-soft);padding:6px 11px;border-radius:20px}
+  .hchip b{color:var(--primary);font-weight:500}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.84rem;font-weight:500;padding:12px 20px;border-radius:24px;transition:transform .2s, box-shadow .2s, border-color .2s, color .2s;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+  .btn-primary{background:var(--primary);color:var(--bg);font-weight:600}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(61,220,132,.28)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+
+  /* PHONE MOCKUP (signature) */
+  .phone-stage{display:flex;justify-content:center;perspective:1200px}
+  .phone{
+    width:265px;height:545px;border-radius:38px;background:#04060a;
+    border:1px solid #2a313d;padding:11px;position:relative;
+    box-shadow:0 40px 80px -30px rgba(0,0,0,.85), 0 0 0 2px rgba(61,220,132,.05);
+    transform:rotateY(-12deg) rotateX(4deg);transition:transform .5s ease;
+  }
+  .phone:hover{transform:rotateY(-4deg) rotateX(1deg)}
+  .phone .notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:90px;height:18px;background:#04060a;border-radius:0 0 12px 12px;z-index:5}
+  .screen{width:100%;height:100%;border-radius:28px;background:var(--surface);overflow:hidden;display:flex;flex-direction:column}
+  .scr-status{display:flex;justify-content:space-between;align-items:center;padding:14px 18px 6px;font-family:var(--mono);font-size:.62rem;color:var(--muted)}
+  .scr-appbar{padding:6px 18px 14px;display:flex;align-items:center;justify-content:space-between}
+  .scr-appbar h4{font-family:var(--display);font-size:1.05rem;color:var(--text-strong);font-weight:600}
+  .scr-appbar .avatar{width:26px;height:26px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent)}
+  .balance{margin:0 16px 14px;background:linear-gradient(135deg, rgba(61,220,132,.16), rgba(167,139,250,.14));border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+  .balance .lbl{font-family:var(--mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .balance .amt{font-family:var(--display);font-size:1.7rem;font-weight:700;color:var(--text-strong);margin-top:2px}
+  .balance .sub{font-family:var(--mono);font-size:.62rem;color:var(--primary);margin-top:3px}
+  .scr-list{flex:1;overflow:hidden;padding:0 16px}
+  .txn{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid var(--line-soft);opacity:0;transform:translateY(8px);animation:rise .5s forwards}
+  .txn:nth-child(1){animation-delay:.25s}.txn:nth-child(2){animation-delay:.4s}.txn:nth-child(3){animation-delay:.55s}.txn:nth-child(4){animation-delay:.7s}
+  .txn .ti{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:.8rem;background:var(--primary-dim);flex-shrink:0}
+  .txn .tt{flex:1}
+  .txn .tt .name{font-size:.74rem;color:var(--text-strong)}
+  .txn .tt .cat{font-family:var(--mono);font-size:.58rem;color:var(--muted)}
+  .txn .tv{font-family:var(--mono);font-size:.72rem;color:var(--text)}
+  .scr-nav{display:flex;justify-content:space-around;align-items:center;padding:12px 0 16px;border-top:1px solid var(--line-soft);background:var(--surface-2)}
+  .scr-nav .ni{width:6px;height:6px;border-radius:50%;background:var(--muted)}
+  .scr-nav .ni.on{background:var(--primary);width:20px;border-radius:4px}
+  .fab{position:absolute;right:24px;bottom:74px;width:46px;height:46px;border-radius:16px;background:var(--primary);color:var(--bg);display:grid;place-items:center;font-size:1.5rem;font-weight:300;box-shadow:0 10px 24px rgba(61,220,132,.4);z-index:6;animation:fabpulse 2.4s ease-in-out infinite}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @keyframes fabpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+
+  /* SECTIONS */
+  section{padding:72px 0;position:relative}
+  .sec-head{margin-bottom:40px}
+  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,3.2vw,2.3rem);color:var(--text-strong);letter-spacing:-.015em;margin-top:10px}
+  .sec-head p{color:var(--muted);margin-top:6px;max-width:54ch}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:170px 1fr;gap:36px;align-items:start}
+  .headshot{width:170px;height:170px;border-radius:24px;object-fit:cover;border:1px solid var(--line);filter:grayscale(.1)}
+  .about-grid p{color:var(--text);margin-bottom:14px}
+  .about-grid p:last-of-type{margin-bottom:0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .chip{font-family:var(--mono);font-size:.72rem;color:var(--muted);background:var(--surface);border:1px solid var(--line-soft);padding:6px 11px;border-radius:8px}
+  .chip b{color:var(--primary);font-weight:500}
+
+  /* skills */
+  .stacks{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .stack{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px;transition:border-color .25s, transform .25s}
+  .stack:hover{border-color:var(--primary);transform:translateY(-3px)}
+  .stack h3{font-family:var(--mono);font-size:.78rem;color:var(--accent);margin-bottom:14px;letter-spacing:.03em;text-transform:lowercase}
+  .stack h3::before{content:"› ";color:var(--muted)}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-family:var(--mono);font-size:.74rem;color:var(--text);background:var(--surface-2);border:1px solid var(--line-soft);padding:5px 10px;border-radius:20px;transition:color .2s, border-color .2s}
+  .tag:hover{color:var(--primary);border-color:var(--primary)}
+
+  /* experience */
+  .timeline{position:relative;padding-left:30px}
+  .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--primary),var(--line) 72%)}
+  .tl-item{position:relative;padding-bottom:40px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:-30px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--primary)}
+  .tl-item.dim::before{border-color:var(--line)}
+  .tl-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:4px}
+  .tl-role{font-family:var(--display);font-size:1.16rem;font-weight:600;color:var(--text-strong)}
+  .tl-co{color:var(--primary);font-weight:500}
+  .tl-date{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin-left:auto}
+  .tl-bullets{list-style:none;margin-top:12px;display:grid;gap:9px}
+  .tl-bullets li{position:relative;padding-left:20px;color:var(--text);font-size:.97rem}
+  .tl-bullets li::before{content:"▹";position:absolute;left:0;color:var(--primary);font-size:.8rem;top:3px}
+  .tl-foot{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:14px}
+  .tl-env{font-family:var(--mono);font-size:.72rem;color:var(--muted);line-height:1.7}
+  .tl-env b{color:var(--text);font-weight:500}
+  .play-link{font-family:var(--mono);font-size:.72rem;color:var(--accent);display:inline-flex;gap:6px;align-items:center;transition:opacity .2s}
+  .play-link:hover{opacity:.7}
+
+  /* projects */
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .proj{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;transition:border-color .25s, transform .25s}
+  .proj:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .proj .p-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .proj h3{font-family:var(--display);font-size:1.06rem;font-weight:600;color:var(--text-strong)}
+  .proj .p-date{font-family:var(--mono);font-size:.66rem;color:var(--muted)}
+  .proj p{color:var(--text);font-size:.92rem;margin-bottom:12px}
+  .proj .p-tags{display:flex;flex-wrap:wrap;gap:6px}
+  .proj .p-tags span{font-family:var(--mono);font-size:.66rem;color:var(--muted);background:var(--surface-2);border:1px solid var(--line-soft);padding:3px 8px;border-radius:14px}
+
+  /* education */
+  .edu{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .edu-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .edu-card .deg{font-family:var(--display);font-size:1.02rem;font-weight:600;color:var(--text-strong)}
+  .edu-card .uni{color:var(--primary);font-size:.9rem;margin-top:3px}
+
+  /* contact */
+  .contact-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:42px;text-align:center}
+  .contact-card h2{font-family:var(--display);font-size:clamp(1.7rem,3.4vw,2.4rem);color:var(--text-strong);margin-bottom:10px}
+  .contact-card p{color:var(--muted);max-width:46ch;margin:0 auto 26px}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  footer{border-top:1px solid var(--line-soft);padding:30px 0;margin-top:30px}
+  .foot-inner{display:flex;justify-content:center;align-items:center}
+  .foot-inner span{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;gap:44px}
+    .phone-stage{order:2}
+    .phone{transform:none}
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:62px;left:0;right:0;flex-direction:column;gap:0;background:rgba(12,14,19,.98);border-bottom:1px solid var(--line);padding:8px 28px 16px}
+    .nav-links.open a{padding:11px 0;border-bottom:1px solid var(--line-soft)}
+    .nav-links.open .nav-cta{margin-top:10px;text-align:center}
+    .nav-toggle{display:block}
+    .about-grid{grid-template-columns:1fr;gap:22px}
+    .headshot{width:120px;height:120px}
+    .stacks,.projects,.edu{grid-template-columns:1fr}
+    .tl-date{margin-left:0;width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    .txn{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">GirishKumar<span class="b-accent">.</span>dev</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">about</a>
+      <a href="#skills">stack</a>
+      <a href="#experience">work</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+      <a class="nav-cta" href="Girishkumar_Patchikoru_Android.pdf" target="_blank" rel="noopener">résumé ↓</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">≡</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <span class="eyebrow reveal">android · kotlin · jetpack compose</span>
+        <h1 class="reveal">GirishKumar Patchikoru<span class="role">Android Developer</span></h1>
+        <p class="hero-sub reveal">I design and build modern, high-performance Android apps. Clean MVVM architecture, smooth Material interfaces, and reliable releases on the Play Store.</p>
+        <div class="hero-chips reveal">
+          <span class="hchip"><b>5+ yrs</b> mobile</span>
+          <span class="hchip"><b>Kotlin</b> + Java</span>
+          <span class="hchip"><b>MVVM</b> + Jetpack</span>
+          <span class="hchip"><b>Compose</b></span>
+        </div>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="Girishkumar_Patchikoru_Android.pdf" target="_blank" rel="noopener">Download résumé</a>
+          <a class="btn btn-ghost" href="#projects">See projects</a>
+        </div>
+      </div>
+
+      <!-- SIGNATURE: phone mockup -->
+      <div class="phone-stage reveal" aria-hidden="true">
+        <div class="phone">
+          <div class="notch"></div>
+          <div class="screen">
+            <div class="scr-status"><span>9:41</span><span>5G ▪ 100%</span></div>
+            <div class="scr-appbar"><h4>Expenses</h4><div class="avatar"></div></div>
+            <div class="balance">
+              <div class="lbl">This month</div>
+              <div class="amt">$1,284.50</div>
+              <div class="sub">▾ 12% vs last month</div>
+            </div>
+            <div class="scr-list">
+              <div class="txn"><div class="ti">🍜</div><div class="tt"><div class="name">Groceries</div><div class="cat">food</div></div><div class="tv">$54.20</div></div>
+              <div class="txn"><div class="ti">🚇</div><div class="tt"><div class="name">Transit pass</div><div class="cat">transport</div></div><div class="tv">$32.00</div></div>
+              <div class="txn"><div class="ti">☕</div><div class="tt"><div class="name">Coffee</div><div class="cat">food</div></div><div class="tv">$4.75</div></div>
+              <div class="txn"><div class="ti">🎬</div><div class="tt"><div class="name">Streaming</div><div class="cat">bills</div></div><div class="tv">$15.99</div></div>
+            </div>
+            <div class="fab">+</div>
+            <div class="scr-nav"><span class="ni on"></span><span class="ni"></span><span class="ni"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">about</span><h2>About</h2></div>
+    <div class="about-grid reveal">
+      <img class="headshot" src="headshot.png" alt="GirishKumar Patchikoru">
+      <div>
+        <p>Android Developer with 5+ years designing, building, and maintaining modern, high-performance mobile applications for enterprise and customer-facing platforms. I work primarily in Kotlin and Java with MVVM architecture, Jetpack components, and modular design to ship scalable, maintainable, production-ready apps.</p>
+        <p>I integrate REST APIs, Firebase, OAuth 2.0, and third-party SDKs for secure backend communication, and build responsive interfaces with Material Design, Jetpack Compose, and the classic view system. I care about performance, memory, and battery efficiency, back my work with JUnit, Mockito, and Espresso tests, and automate releases through CI/CD with Fastlane, Bitrise, and GitHub Actions.</p>
+        <div class="meta">
+          <span class="chip"><b>degree:</b> M.S. Computer Science</span>
+          <span class="chip"><b>school:</b> Texas A&M University</span>
+          <span class="chip"><b>focus:</b> Mobile · Android · Kotlin</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">stack.kt</span><h2>Technical stack</h2><p>The tools I reach for across the mobile development lifecycle.</p></div>
+    <div class="stacks">
+      <div class="stack reveal"><h3>mobile</h3><div class="tags"><span class="tag">Kotlin</span><span class="tag">Java</span><span class="tag">Swift</span><span class="tag">Objective-C</span><span class="tag">Android Studio</span><span class="tag">Gradle</span><span class="tag">Jetpack</span><span class="tag">Jetpack Compose</span></div></div>
+      <div class="stack reveal"><h3>ui / ux</h3><div class="tags"><span class="tag">Material Design</span><span class="tag">Constraint Layout</span><span class="tag">RecyclerView</span><span class="tag">CardView</span><span class="tag">ViewPager2</span><span class="tag">Auto Layout</span></div></div>
+      <div class="stack reveal"><h3>data &amp; backend</h3><div class="tags"><span class="tag">REST APIs</span><span class="tag">JSON</span><span class="tag">GraphQL</span><span class="tag">Firebase</span><span class="tag">Room</span><span class="tag">Realm</span><span class="tag">SQLite</span><span class="tag">LiveData</span><span class="tag">ViewModel</span></div></div>
+      <div class="stack reveal"><h3>testing &amp; qa</h3><div class="tags"><span class="tag">JUnit</span><span class="tag">Mockito</span><span class="tag">Espresso</span><span class="tag">XCTest</span><span class="tag">Postman</span></div></div>
+      <div class="stack reveal"><h3>ci / cd</h3><div class="tags"><span class="tag">GitHub Actions</span><span class="tag">Bitrise</span><span class="tag">Fastlane</span><span class="tag">Jenkins</span></div></div>
+      <div class="stack reveal"><h3>tools &amp; monitoring</h3><div class="tags"><span class="tag">Git</span><span class="tag">GitLab</span><span class="tag">Bitbucket</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Crashlytics</span><span class="tag">Firebase Analytics</span><span class="tag">FCM</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">work history</span><h2>Experience</h2></div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-top"><span class="tl-role">Android Developer</span><span class="tl-co">· J&amp;J, Pennsylvania</span><span class="tl-date">Aug 2025 - Present</span></div>
+        <ul class="tl-bullets">
+          <li>Built and enhanced enterprise Android features for an internal and external user platform, focused on maintainable architecture and smooth user experience.</li>
+          <li>Integrated REST APIs, JSON endpoints, and third-party SDKs for secure backend communication, with reusable, modular, testable UI components.</li>
+          <li>Optimized performance, memory, and battery across devices; added push notifications, background services, and offline caching for reliability.</li>
+          <li>Set up CI/CD with Bitrise and Fastlane for automated builds, testing, and Play Store delivery with proper versioning and release notes.</li>
+          <li>Mentored junior developers, ran code reviews, and partnered with QA on detailed test planning for high-quality releases.</li>
+        </ul>
+        <div class="tl-foot">
+          <span class="tl-env"><b>env:</b> Android Studio · Kotlin · REST APIs · Firebase · Git · Jira · Agile · CI/CD · Room · Realm</span>
+          <a class="play-link" href="https://play.google.com/store/apps/details?id=mobile.appBStPAoj8kO" target="_blank" rel="noopener">▸ View on Play Store</a>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-top"><span class="tl-role">Android Developer</span><span class="tl-co">· Kroger, Ohio</span><span class="tl-date">Feb 2024 - Jul 2025</span></div>
+        <ul class="tl-bullets">
+          <li>Developed and maintained Android applications for retail operations and customer-facing grocery services used at scale.</li>
+          <li>Built dashboards, reporting tools, and notification features for store workflows and customer engagement, with real-time backend synchronization.</li>
+          <li>Implemented advanced UI including custom views, animations, and interactive components; optimized API calls, caching, and responsiveness.</li>
+          <li>Deployed through CI/CD pipelines for smooth releases, and monitored analytics and feedback to improve features and usability.</li>
+          <li>Contributed to reusable enterprise UI design systems and documented workflows for team maintainability.</li>
+        </ul>
+        <div class="tl-foot">
+          <span class="tl-env"><b>env:</b> Android Studio · Kotlin · REST APIs · Firebase · GitHub · Jira · Agile · CI/CD · Room · Realm</span>
+          <a class="play-link" href="https://play.google.com/store/apps/details?id=com.kroger.mobile&hl=en_US" target="_blank" rel="noopener">▸ View on Play Store</a>
+        </div>
+      </div>
+
+      <div class="tl-item reveal dim">
+        <div class="tl-top"><span class="tl-role">Android Developer</span><span class="tl-co">· Infinite Solutions (Justdial), India</span><span class="tl-date">Jul 2020 - Jul 2023</span></div>
+        <ul class="tl-bullets">
+          <li>Built Justdial features in Kotlin with MVVM, ViewModel, and LiveData for lifecycle-aware state and responsive listing, search, and profile screens.</li>
+          <li>Developed business listing and detail modules with RecyclerView and CardView, plus image galleries, ratings, reviews, and offers.</li>
+          <li>Integrated Glide for image loading and caching, and the Google Places SDK for autocomplete, search accuracy, and nearby recommendations.</li>
+          <li>Added FCM notifications, OAuth 2.0 session handling, and favorites/preferences modules; tested with JUnit, Mockito, and Espresso.</li>
+          <li>Managed Gradle build types, product flavors, and dependencies; worked in Agile with sprint planning and reviews via Jira and GitHub.</li>
+        </ul>
+        <div class="tl-foot">
+          <span class="tl-env"><b>env:</b> Android Studio · Kotlin · Java · REST APIs · Firebase · GitLab · Agile · CI/CD</span>
+          <a class="play-link" href="https://play.google.com/store/apps/details?id=com.justdial.search&hl=en_US" target="_blank" rel="noopener">▸ View on Play Store</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">side builds</span><h2>Projects</h2></div>
+    <div class="projects">
+      <div class="proj reveal">
+        <div class="p-top"><h3>Mental Health Support Chatbot</h3><span class="p-date">Dec 2024 to May 2025</span></div>
+        <p>AI chatbot for psychiatrist patient support built with Llama 2, Mixtral, and Retrieval-Augmented Generation. Cleaned large-scale text data and fine-tuned on case-study content to improve answer relevance and context.</p>
+        <div class="p-tags"><span>Llama 2</span><span>Mixtral</span><span>RAG</span><span>NLP</span></div>
+      </div>
+      <div class="proj reveal">
+        <div class="p-top"><h3>Smart Expense Tracker</h3><span class="p-date">Jun 2024 to Aug 2025</span></div>
+        <p>Android expense tracker in Kotlin with MVVM, Room, and LiveData. Category-wise tracking, budget alerts, and transaction history with a clean RecyclerView and Material UI, plus spending insights and optimized offline storage.</p>
+        <div class="p-tags"><span>Kotlin</span><span>MVVM</span><span>Room</span><span>LiveData</span><span>Material</span></div>
+      </div>
+      <div class="proj reveal">
+        <div class="p-top"><h3>Campus Mood Map</h3><span class="p-date">Jan 2024 to May 2025</span></div>
+        <p>Android app in Kotlin, MVVM, Firebase, and Google Maps SDK that helps students find study spaces by crowd, noise, stress, and safety. Anonymous check-ins, color-coded map markers, live Firestore updates, and time-based insights.</p>
+        <div class="p-tags"><span>Kotlin</span><span>Firebase</span><span>Maps SDK</span><span>Firestore</span></div>
+      </div>
+      <div class="proj reveal">
+        <div class="p-top"><h3>OS Kernel Optimization</h3><span class="p-date">C · Systems</span></div>
+        <p>Engineered custom system calls and CPU scheduling that improved process execution efficiency by 22%. Built memory management with lazy allocation and copy-on-write, and implemented core Unix utilities and file-system operations.</p>
+        <div class="p-tags"><span>C</span><span>System Programming</span><span>Scheduling</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">education</span><h2>Education</h2></div>
+    <div class="edu">
+      <div class="edu-card reveal"><div class="deg">M.S. in Computer Science</div><div class="uni">Texas A&M University</div></div>
+      <div class="edu-card reveal"><div class="deg">B.Tech in Computer Science</div><div class="uni">Jawaharlal Nehru Technological University, Kakinada</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <span class="eyebrow" style="justify-content:center">get in touch</span>
+      <h2>Let's build a great app</h2>
+      <p>Open to Android and mobile engineering roles. Reach out and I'll respond fast.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:girish5f9@gmail.com">girish5f9@gmail.com</a>
+        <a class="btn btn-ghost" href="https://github.com/gpatchikoru" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="tel:+13619055644">+1 361 905 5644</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner"><span>© <span id="yr"></span> GirishKumar Patchikoru</span></div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 16));
+  const links = document.getElementById('navLinks'), toggle = document.getElementById('navToggle');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.addEventListener('click', e => { if (e.target.tagName === 'A') links.classList.remove('open'); });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((es) => { es.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, { threshold:.14 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
