@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Girishkumar Patchikoru, MLOps Engineer. ML pipelines, LLMOps, RAG, and model serving across AWS, Azure, and GCP.">
+<meta name="author" content="Girishkumar Patchikoru">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Girishkumar Patchikoru | MLOps Engineer">
+<meta property="og:description" content="MLOps Engineer: MLflow, Kubeflow, LangChain, RAG, Kubernetes, SageMaker, Vertex AI.">
+<meta property="og:url" content="https://patchikoru.com/llmops">
+<title>Girishkumar Patchikoru | MLOps Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0c12;
+    --surface:#11141d;
+    --surface-2:#171b27;
+    --line:#242a3a;
+    --line-soft:#1b2030;
+    --text:#d6dbe6;
+    --text-strong:#f2f4fa;
+    --muted:#828ca6;
+    --primary:#7c84ff;
+    --primary-dim:rgba(124,132,255,.12);
+    --accent:#22d3ee;
+    --accent-dim:rgba(34,211,238,.12);
+    --display:"Outfit",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(840px 480px at 80% -6%, rgba(124,132,255,.10), transparent 60%),radial-gradient(680px 460px at -4% 14%, rgba(34,211,238,.06), transparent 56%)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1}
+  a{color:inherit;text-decoration:none}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--primary);text-transform:lowercase;display:inline-flex;gap:.5em;align-items:center}
+  .eyebrow::before{content:"◆";color:var(--accent);font-size:.65em}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px);background:rgba(10,12,18,.72);border-bottom:1px solid transparent;transition:border-color .3s, background .3s}
+  nav.scrolled{border-bottom-color:var(--line);background:rgba(10,12,18,.92)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{font-family:var(--mono);font-size:.86rem;color:var(--text-strong);font-weight:500}
+  .brand .b-accent{color:var(--primary)}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:.8rem;color:var(--muted);transition:color .2s;position:relative}
+  .nav-links a:hover{color:var(--text-strong)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--primary);transition:width .25s}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{font-family:var(--mono);font-size:.78rem;color:var(--bg)!important;background:var(--primary);padding:8px 14px;border-radius:6px;font-weight:600;transition:transform .2s, box-shadow .2s}
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(124,132,255,.32)}
+  .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.4rem;cursor:pointer}
+
+  header{padding:140px 0 70px}
+  .hero{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
+  .hero h1{font-family:var(--display);font-weight:700;letter-spacing:-.025em;line-height:1.03;font-size:clamp(2.4rem,5.2vw,4rem);color:var(--text-strong);margin:18px 0 8px}
+  .hero h1 .role{display:block;color:var(--primary)}
+  .hero-sub{color:var(--muted);font-size:1.05rem;max-width:37ch;margin-bottom:24px}
+  .hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+  .hchip{font-family:var(--mono);font-size:.74rem;color:var(--text);background:var(--surface);border:1px solid var(--line-soft);padding:6px 11px;border-radius:7px}
+  .hchip b{color:var(--primary);font-weight:500}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.84rem;font-weight:500;padding:12px 20px;border-radius:8px;transition:transform .2s, box-shadow .2s, border-color .2s, color .2s;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+  .btn-primary{background:var(--primary);color:var(--bg);font-weight:600}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(124,132,255,.3)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+
+  /* SIGNATURE: RAG / model monitor */
+  .monitor{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 24px 60px -28px rgba(0,0,0,.75)}
+  .mon-bar{display:flex;align-items:center;gap:8px;padding:2px 2px 14px;border-bottom:1px solid var(--line-soft);margin-bottom:16px}
+  .mon-bar .mdl{font-family:var(--mono);font-size:.74rem;color:var(--text-strong)}
+  .mon-bar .mver{font-family:var(--mono);font-size:.64rem;color:var(--muted)}
+  .mon-bar .serving{margin-left:auto;font-family:var(--mono);font-size:.64rem;color:var(--primary);background:var(--primary-dim);padding:4px 9px;border-radius:14px;display:inline-flex;align-items:center;gap:6px}
+  .mon-bar .serving .pip{width:6px;height:6px;border-radius:50%;background:var(--primary);animation:pulse 1.6s ease-in-out infinite}
+  /* rag flow */
+  .rag{display:flex;align-items:center;gap:7px;margin-bottom:16px;font-family:var(--mono);font-size:.62rem}
+  .rag .node{flex:1;text-align:center;padding:8px 4px;border-radius:8px;background:var(--surface-2);border:1px solid var(--line-soft);color:var(--text);opacity:0;transform:translateY(6px);animation:rise .5s forwards}
+  .rag .node:nth-child(1){animation-delay:.2s}.rag .node:nth-child(3){animation-delay:.45s}.rag .node:nth-child(5){animation-delay:.7s}.rag .node:nth-child(7){animation-delay:.95s}
+  .rag .node.lit{border-color:rgba(124,132,255,.45);color:var(--primary)}
+  .rag .arrow{color:var(--muted);flex-shrink:0}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+  .metric{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:10px;padding:11px 12px}
+  .metric .ml{font-family:var(--mono);font-size:.56rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .metric .mv{font-family:var(--display);font-size:1.3rem;font-weight:700;color:var(--text-strong);margin-top:3px}
+  .metric .mv.cyan{color:var(--accent)}
+  .metric .md{font-family:var(--mono);font-size:.56rem;color:var(--primary);margin-top:1px}
+  .chartbox{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:10px;padding:13px 14px}
+  .chartbox .ct{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.62rem;color:var(--muted);margin-bottom:8px}
+  .chartbox .ct b{color:var(--text)}
+  .spark{width:100%;height:44px;display:block}
+  .spark path.line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-dasharray:600;stroke-dashoffset:600;animation:draw 2s ease forwards .3s}
+  .spark path.area{fill:url(#mlgrad);opacity:0;animation:fade .8s ease forwards 1.6s}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes fade{to{opacity:.5}}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+  section{padding:72px 0;position:relative}
+  .sec-head{margin-bottom:40px}
+  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,3.2vw,2.3rem);color:var(--text-strong);letter-spacing:-.015em;margin-top:10px}
+  .sec-head p{color:var(--muted);margin-top:6px;max-width:54ch}
+
+  .about-grid{display:grid;grid-template-columns:170px 1fr;gap:36px;align-items:start}
+  .headshot{width:170px;height:170px;border-radius:14px;object-fit:cover;border:1px solid var(--line);filter:grayscale(.12)}
+  .about-grid p{color:var(--text);margin-bottom:14px}
+  .about-grid p:last-of-type{margin-bottom:0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .chip{font-family:var(--mono);font-size:.72rem;color:var(--muted);background:var(--surface);border:1px solid var(--line-soft);padding:6px 11px;border-radius:7px}
+  .chip b{color:var(--primary);font-weight:500}
+
+  .stacks{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .stack{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;transition:border-color .25s, transform .25s}
+  .stack:hover{border-color:var(--primary);transform:translateY(-3px)}
+  .stack h3{font-family:var(--mono);font-size:.78rem;color:var(--accent);margin-bottom:14px;letter-spacing:.03em;text-transform:lowercase}
+  .stack h3::before{content:"# ";color:var(--muted)}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-family:var(--mono);font-size:.74rem;color:var(--text);background:var(--surface-2);border:1px solid var(--line-soft);padding:5px 10px;border-radius:6px;transition:color .2s, border-color .2s}
+  .tag:hover{color:var(--primary);border-color:var(--primary)}
+
+  .timeline{position:relative;padding-left:30px}
+  .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--primary),var(--line) 75%)}
+  .tl-item{position:relative;padding-bottom:38px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:-30px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--primary)}
+  .tl-item.dim::before{border-color:var(--line)}
+  .tl-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:4px}
+  .tl-role{font-family:var(--display);font-size:1.14rem;font-weight:600;color:var(--text-strong)}
+  .tl-co{color:var(--primary);font-weight:500}
+  .tl-date{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-left:auto}
+  .tl-loc{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-bottom:2px}
+  .tl-bullets{list-style:none;margin-top:11px;display:grid;gap:9px}
+  .tl-bullets li{position:relative;padding-left:20px;color:var(--text);font-size:.96rem}
+  .tl-bullets li::before{content:"▹";position:absolute;left:0;color:var(--primary);font-size:.8rem;top:3px}
+  .tl-env{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:13px;line-height:1.7}
+  .tl-env b{color:var(--text);font-weight:500}
+
+  .certs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .cert{display:flex;gap:13px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:16px 18px;transition:border-color .25s, transform .2s}
+  .cert:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .cert .seal{font-family:var(--mono);font-size:.7rem;font-weight:600;color:var(--accent);background:var(--accent-dim);width:32px;height:32px;border-radius:8px;display:grid;place-items:center;flex-shrink:0}
+  .cert .cn{color:var(--text);font-size:.9rem;line-height:1.4;flex:1}
+  .cert .ext{font-family:var(--mono);font-size:.8rem;color:var(--muted);transition:color .2s}
+  .cert:hover .ext{color:var(--accent)}
+
+  .edu-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+  .edu-card .deg{font-family:var(--display);font-size:1.05rem;font-weight:600;color:var(--text-strong)}
+  .edu-card .uni{color:var(--primary);font-size:.92rem}
+
+  .contact-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:42px;text-align:center}
+  .contact-card h2{font-family:var(--display);font-size:clamp(1.7rem,3.4vw,2.4rem);color:var(--text-strong);margin-bottom:10px}
+  .contact-card p{color:var(--muted);max-width:46ch;margin:0 auto 26px}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  footer{border-top:1px solid var(--line-soft);padding:30px 0;margin-top:30px}
+  .foot-inner{display:flex;justify-content:center;align-items:center}
+  .foot-inner span{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;gap:44px}
+    .monitor{order:2}
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:62px;left:0;right:0;flex-direction:column;gap:0;background:rgba(10,12,18,.98);border-bottom:1px solid var(--line);padding:8px 28px 16px}
+    .nav-links.open a{padding:11px 0;border-bottom:1px solid var(--line-soft)}
+    .nav-links.open .nav-cta{margin-top:10px;text-align:center}
+    .nav-toggle{display:block}
+    .about-grid{grid-template-columns:1fr;gap:22px}
+    .headshot{width:120px;height:120px}
+    .stacks,.certs{grid-template-columns:1fr}
+    .tl-date{margin-left:0;width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    .rag .node{opacity:1;transform:none}
+    .spark path.line{stroke-dashoffset:0}.spark path.area{opacity:.5}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">girish<span class="b-accent">@</span>mlops:~$</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">about</a>
+      <a href="#skills">stack</a>
+      <a href="#experience">experience</a>
+      <a href="#certs">certs</a>
+      <a href="#contact">contact</a>
+      <a class="nav-cta" href="Girishkumar_Patchikoru_MLOps.pdf" target="_blank" rel="noopener">résumé ↓</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">≡</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <span class="eyebrow reveal">mlops · llmops · rag · model serving</span>
+        <h1 class="reveal">Girishkumar Patchikoru<span class="role">MLOps Engineer</span></h1>
+        <p class="hero-sub reveal">I build the platforms that take models, and now LLMs, from experiment to reliable production. End-to-end ML pipelines, GenAI apps, and monitoring across AWS, Azure, and GCP.</p>
+        <div class="hero-chips reveal">
+          <span class="hchip"><b>6+ yrs</b> MLOps</span>
+          <span class="hchip"><b>MLflow</b> · Kubeflow</span>
+          <span class="hchip"><b>LangChain</b> · RAG</span>
+          <span class="hchip"><b>Kubernetes</b></span>
+        </div>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="Girishkumar_Patchikoru_MLOps.pdf" target="_blank" rel="noopener">Download résumé</a>
+          <a class="btn btn-ghost" href="#experience">View experience</a>
+        </div>
+      </div>
+
+      <!-- SIGNATURE: RAG flow + model monitor -->
+      <div class="monitor reveal" aria-hidden="true">
+        <div class="mon-bar">
+          <div><div class="mdl">rag-assistant</div><div class="mver">registry · v2.4.0</div></div>
+          <span class="serving"><span class="pip"></span>serving</span>
+        </div>
+        <div class="rag">
+          <div class="node">query</div><span class="arrow">→</span>
+          <div class="node lit">embed</div><span class="arrow">→</span>
+          <div class="node lit">retrieve</div><span class="arrow">→</span>
+          <div class="node">generate</div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="ml">faithfulness</div><div class="mv">0.93</div><div class="md">▴ in range</div></div>
+          <div class="metric"><div class="ml">drift</div><div class="mv cyan">0.02</div><div class="md">stable</div></div>
+          <div class="metric"><div class="ml">p95 latency</div><div class="mv">820ms</div><div class="md">stable</div></div>
+        </div>
+        <div class="chartbox">
+          <div class="ct"><span>tokens / sec</span><span><b>1,240</b> avg</span></div>
+          <svg class="spark" viewBox="0 0 300 44" preserveAspectRatio="none">
+            <defs><linearGradient id="mlgrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity=".5"/>
+              <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+            </linearGradient></defs>
+            <path class="area" d="M0,32 L25,28 L50,31 L75,20 L100,24 L125,14 L150,19 L175,10 L200,16 L225,8 L250,13 L275,6 L300,10 L300,44 L0,44 Z"/>
+            <path class="line" d="M0,32 L25,28 L50,31 L75,20 L100,24 L125,14 L150,19 L175,10 L200,16 L225,8 L250,13 L275,6 L300,10"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">whoami</span><h2>About</h2></div>
+    <div class="about-grid reveal">
+      <img class="headshot" src="headshot.png" alt="Girishkumar Patchikoru">
+      <div>
+        <p>Results-driven MLOps Engineer with 6+ years building, deploying, and managing scalable Machine Learning, Deep Learning, and Generative AI systems across cloud and on-premises environments. I design end-to-end MLOps platforms that streamline ingestion, training, validation, deployment, monitoring, and continuous retraining, with CI/CD/CT pipelines for ML workloads.</p>
+        <p>I work hands-on with MLflow, Kubeflow, Airflow, SageMaker, Vertex AI, and Azure ML for model lifecycle management, and deploy models and LLMs on Kubernetes, Docker, and serverless platforms. I build enterprise GenAI applications with LangChain, LangGraph, LlamaIndex, OpenAI, and Hugging Face, including Retrieval-Augmented Generation over vector databases, and instrument everything for drift, quality, and system health.</p>
+        <div class="meta">
+          <span class="chip"><b>degree:</b> M.S. Computer Science</span>
+          <span class="chip"><b>school:</b> Texas A&M University-Corpus Christi</span>
+          <span class="chip"><b>focus:</b> MLOps · LLMOps · GenAI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">cat stack.yml</span><h2>Technical stack</h2><p>From data ingestion and training through GenAI apps and production serving.</p></div>
+    <div class="stacks">
+      <div class="stack reveal"><h3>cloud</h3><div class="tags"><span class="tag">AWS (SageMaker, Bedrock)</span><span class="tag">EC2 · EKS · Lambda · S3</span><span class="tag">Azure (Azure ML, AKS, ADF)</span><span class="tag">GCP (Vertex AI, GKE)</span><span class="tag">BigQuery</span></div></div>
+      <div class="stack reveal"><h3>mlops platforms</h3><div class="tags"><span class="tag">MLflow</span><span class="tag">Kubeflow</span><span class="tag">SageMaker</span><span class="tag">Vertex AI</span><span class="tag">Azure ML</span><span class="tag">Flyte</span></div></div>
+      <div class="stack reveal"><h3>machine learning</h3><div class="tags"><span class="tag">Scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">Hugging Face</span></div></div>
+      <div class="stack reveal"><h3>generative ai &amp; llmops</h3><div class="tags"><span class="tag">OpenAI API</span><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">LlamaIndex</span><span class="tag">RAG</span><span class="tag">Prompt Engineering</span><span class="tag">AI Agents</span><span class="tag">Fine-Tuning</span><span class="tag">Model Evaluation</span></div></div>
+      <div class="stack reveal"><h3>vector &amp; data</h3><div class="tags"><span class="tag">Pinecone</span><span class="tag">Weaviate</span><span class="tag">ChromaDB</span><span class="tag">FAISS</span><span class="tag">Apache Spark</span><span class="tag">Kafka</span><span class="tag">Databricks</span><span class="tag">Delta Lake</span><span class="tag">Feature Store</span></div></div>
+      <div class="stack reveal"><h3>containers &amp; ci/cd &amp; iac</h3><div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes (EKS/GKE/AKS)</span><span class="tag">Helm</span><span class="tag">ArgoCD</span><span class="tag">Istio</span><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">GitLab CI/CD</span><span class="tag">Terraform</span><span class="tag">Ansible</span></div></div>
+      <div class="stack reveal"><h3>observability &amp; security</h3><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">ELK Stack</span><span class="tag">Evidently AI</span><span class="tag">OpenTelemetry</span><span class="tag">Datadog</span><span class="tag">Vault</span><span class="tag">IAM · RBAC</span><span class="tag">Snyk · Trivy</span></div></div>
+      <div class="stack reveal"><h3>languages &amp; databases</h3><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Bash</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">DynamoDB</span><span class="tag">Redis</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">git log --experience</span><h2>Experience</h2></div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-top"><span class="tl-role">MLOps Engineer</span><span class="tl-co">· MUFG, New York, NY</span><span class="tl-date">Jul 2024 - Present</span></div>
+        <ul class="tl-bullets">
+          <li>Designed and maintained end-to-end MLOps pipelines for ingestion, feature engineering, training, validation, deployment, and monitoring, automating workflows with Python, MLflow, Kubeflow, and Airflow.</li>
+          <li>Built CI/CD/CT pipelines across Jenkins, GitHub Actions, GitLab CI, and Azure DevOps; containerized ML apps with Docker and served scalable inference on Kubernetes and OpenShift.</li>
+          <li>Managed AI/ML infrastructure on AWS, Azure, and GCP with SageMaker, Bedrock, Vertex AI, Azure ML, EKS, AKS, and GKE, provisioned via Terraform, CloudFormation, and Ansible.</li>
+          <li>Implemented model registry and experiment tracking with MLflow, deployment strategies (blue-green, canary, rollback), feature stores, and drift and quality monitoring with Prometheus, Grafana, ELK, OpenTelemetry, and Datadog.</li>
+          <li>Secured ML platforms with IAM, RBAC, OAuth2, JWT, and HashiCorp Vault, and built GenAI features with OpenAI, LangChain, Pinecone, and ChromaDB.</li>
+        </ul>
+        <p class="tl-env"><b>env:</b> AWS SageMaker · Bedrock · MLflow · Kubeflow · Airflow · Spark · Docker · Kubernetes (EKS) · Jenkins · GitHub Actions · ArgoCD · Terraform · Prometheus · Grafana · OpenAI · LangChain · Pinecone · ChromaDB</p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-top"><span class="tl-role">MLOps Engineer</span><span class="tl-co">· Icertis Solution Pvt. Ltd</span><span class="tl-date">Feb 2022 - Aug 2023</span></div>
+        <ul class="tl-bullets">
+          <li>Designed end-to-end MLOps pipelines for training, validation, deployment, monitoring, and automated retraining, on platforms built with SageMaker, MLflow, Kubeflow, and Kubernetes.</li>
+          <li>Automated model deployment with Jenkins, GitHub Actions, GitLab CI, and ArgoCD, and built Continuous Training and Deployment frameworks that cut deployment time and improved reliability.</li>
+          <li>Deployed LLMs and GenAI apps with OpenAI, Bedrock, Hugging Face, and LangChain, and built RAG over Pinecone, ChromaDB, and FAISS for enterprise knowledge search.</li>
+          <li>Managed Kubernetes AI workloads including GPU clusters, autoscaling, model serving, and distributed training, with drift and latency monitoring via Prometheus, Grafana, CloudWatch, and ELK.</li>
+        </ul>
+        <p class="tl-env"><b>env:</b> SageMaker · MLflow · Kubeflow · Kubernetes · Jenkins · GitHub Actions · ArgoCD · OpenAI · Bedrock · Hugging Face · LangChain · Spark · Airflow · Kafka · AWS</p>
+      </div>
+
+      <div class="tl-item reveal dim">
+        <div class="tl-top"><span class="tl-role">DevOps Engineer</span><span class="tl-co">· Adrian Technologies Pvt Ltd</span><span class="tl-date">Apr 2020 - Jan 2022</span></div>
+        <ul class="tl-bullets">
+          <li>Built and maintained CI/CD pipelines with Jenkins and GitLab CI for enterprise SaaS, automating build, test, and deployment for faster, more reliable delivery.</li>
+          <li>Containerized applications with Docker on Kubernetes for horizontal scalability, and provisioned AWS infrastructure with reusable Terraform modules.</li>
+          <li>Implemented Prometheus and Grafana monitoring, Ansible configuration management, and multi-environment promotion (Dev, QA, UAT, Prod) with automated testing and rollback.</li>
+          <li>Strengthened security with IAM policies, RBAC, and secrets management aligned to enterprise standards.</li>
+        </ul>
+        <p class="tl-env"><b>env:</b> AWS · Terraform · Docker · Kubernetes · Jenkins · GitLab CI · Ansible · Prometheus · Grafana · Git · Linux · Bash</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="certs">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">ls ./certifications</span><h2>Certifications</h2><p>Each links to the verifiable credential.</p></div>
+    <div class="certs">
+      <a class="cert reveal" href="https://www.credly.com/badges/16665476-298d-4054-a7c5-835bec0d2397/" target="_blank" rel="noopener"><div class="seal">GCP</div><span class="cn">Google Professional Cloud Architect</span><span class="ext">↗</span></a>
+      <a class="cert reveal" href="https://learn.microsoft.com/en-us/users/patchikorugirishkumar-6118/credentials/a8e5461bf0a879eb" target="_blank" rel="noopener"><div class="seal">AZ</div><span class="cn">Microsoft Certified: Azure Developer Associate</span><span class="ext">↗</span></a>
+      <a class="cert reveal" href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=2B447EACADB78D716804908DBB3C657220875B7B865B5E2B786E860E4DA95EB5" target="_blank" rel="noopener"><div class="seal">OCI</div><span class="cn">Oracle Cloud Infrastructure 2025 Certified Foundations Associate</span><span class="ext">↗</span></a>
+      <a class="cert reveal" href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=83D05AAAA4208E6F35C6D16ABB6AA7283F3978509C5620062907FD22D29F44FB" target="_blank" rel="noopener"><div class="seal">AI</div><span class="cn">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</span><span class="ext">↗</span></a>
+      <a class="cert reveal" href="https://badges.plus.columbia.edu/ec4f70c3-bc72-4cab-b378-1ce655a1d2ed" target="_blank" rel="noopener"><div class="seal">AI</div><span class="cn">Prompt Engineering &amp; Programming with OpenAI</span><span class="ext">↗</span></a>
+      <a class="cert reveal" href="https://www.credly.com/badges/6d87c052-2169-41a8-bf89-5ca961de9dba/" target="_blank" rel="noopener"><div class="seal">DA</div><span class="cn">Google Data Analytics Professional Certificate</span><span class="ext">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">education</span><h2>Education</h2></div>
+    <div class="edu-card reveal">
+      <span class="deg">M.S. in Computer Science</span>
+      <span class="uni">Texas A&M University-Corpus Christi</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <span class="eyebrow" style="justify-content:center">./connect.sh</span>
+      <h2>Let's ship models to production</h2>
+      <p>Open to MLOps, LLMOps, and ML Platform roles. Reach out and I'll respond fast.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:girishdevcode@gmail.com">girishdevcode@gmail.com</a>
+        <a class="btn btn-ghost" href="https://github.com/gpatchikoru" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="tel:+13619055644">+1 361 905 5644</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner"><span>© <span id="yr"></span> Girishkumar Patchikoru</span></div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 16));
+  const links = document.getElementById('navLinks'), toggle = document.getElementById('navToggle');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.addEventListener('click', e => { if (e.target.tagName === 'A') links.classList.remove('open'); });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((es) => { es.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, { threshold:.14 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
